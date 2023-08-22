@@ -1,4 +1,4 @@
-import useFetchPokemon from "../hooks/useFetchPokemon";
+import PropTypes from "prop-types";
 
 const Products = ({ pokemon, error, loading }) => {
   console.log(pokemon);
@@ -26,6 +26,12 @@ const Products = ({ pokemon, error, loading }) => {
       ))}
     </div>
   );
+};
+
+Products.propTypes = {
+  pokemon: PropTypes.arrayOf(PropTypes.object).isRequired,
+  error: PropTypes.instanceOf(Error),
+  loading: PropTypes.bool.isRequired,
 };
 
 export default Products;
