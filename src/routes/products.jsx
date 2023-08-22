@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 
 const Products = ({ pokemon, error, loading }) => {
-  console.log(pokemon);
-
   if (error)
     return (
       <div>
