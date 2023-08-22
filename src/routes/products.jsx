@@ -1,8 +1,6 @@
 import useFetchPokemon from "../hooks/useFetchPokemon";
 
-const Products = () => {
-  const { pokemon, error, loading } = useFetchPokemon();
-
+const Products = ({ pokemon, error, loading }) => {
   console.log(pokemon);
 
   if (error)

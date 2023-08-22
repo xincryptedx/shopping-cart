@@ -1,9 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import useFetchPokemon from "./hooks/useFetchPokemon";
 import Root from "./routes/root";
 import ErrorPage from "./routes/ErrorPage";
 import Products from "./routes/products";
 
 const Router = () => {
+  const { pokemon, error, loading } = useFetchPokemon();
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -12,7 +15,7 @@ const Router = () => {
     },
     {
       path: "/products",
-      element: <Products />,
+      element: <Products pokemon={pokemon} error={error} loading={loading} />,
     },
   ]);
 
