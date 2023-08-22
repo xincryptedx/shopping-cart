@@ -22,8 +22,10 @@ const Products = () => {
   return (
     <div>
       <p>This is the products route!</p>
-      <p>Here is some data on {pokemon[0].name}</p>
-      <p>{JSON.stringify(pokemon[0])}</p>
+      <p>Pokemon have been loaded!</p>
+      {pokemon.map((mon) => (
+        <p key={mon.id}>{mon.name}</p>
+      ))}
     </div>
   );
 };
