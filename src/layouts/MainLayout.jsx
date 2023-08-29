@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <>
-      {/* Nav */}
+      <p>Im a layout!</p>
       <main>
         <Outlet />
       </main>
