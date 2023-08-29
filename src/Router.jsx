@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useFetchPokemon from "./hooks/useFetchPokemon";
+import MainLayout from "./layouts/MainLayout";
 import Root from "./routes/root";
 import ErrorPage from "./routes/ErrorPage";
 import Products from "./routes/products";
@@ -10,12 +11,20 @@ const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <MainLayout />,
       errorElement: <ErrorPage />,
-    },
-    {
-      path: "/products",
-      element: <Products pokemon={pokemon} error={error} loading={loading} />,
+      children: [
+        {
+          index: true,
+          element: <Root />,
+        },
+        {
+          path: "/products",
+          element: (
+            <Products pokemon={pokemon} error={error} loading={loading} />
+          ),
+        },
+      ],
     },
   ]);
 
