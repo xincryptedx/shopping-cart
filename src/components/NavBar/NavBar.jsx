@@ -5,12 +5,12 @@ const NavBar = () => {
   return (
     <nav className={styles.NavBar}>
       <Link to="/">
-        <button>Home</button>
+        <button className={styles.homeBtn}>Home</button>
       </Link>
       <Link to="products">
-        <button>Shop</button>
+        <button className={styles.productsBtn}>Shop</button>
       </Link>
-      <button>Cart</button>
+      <button className={styles.cartBtn}>Cart</button>
     </nav>
   );
 };
