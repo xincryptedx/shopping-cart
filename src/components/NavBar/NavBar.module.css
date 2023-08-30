@@ -2,6 +2,23 @@
   display: grid;
   grid-auto-flow: column;
   grid-template: 1fr / 1fr 1fr 1fr;
+
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    112deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(226, 74, 110, 1) 20%,
+    rgba(2, 0, 36, 1) 50%,
+    rgba(132, 128, 198, 1) 80%,
+    rgba(2, 0, 36, 1) 100%
+  );
+
+  border: 3px solid black;
+
+  min-height: 45px;
+  max-height: 80px;
+
+  font-size: 14px;
 }
 
 .navBtn {
