@@ -22,6 +22,14 @@
   cursor: default;
 }
 
+.navBtn:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.navBtn:active {
+  background-color: rgb(244, 244, 244);
+}
+
 .homeBtn {
   justify-self: start;
 }
