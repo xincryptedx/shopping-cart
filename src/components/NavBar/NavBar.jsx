@@ -1,16 +1,16 @@
+import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
-import LinkButton from "../LinkButton/LinkButton";
 
 const NavBar = () => {
   return (
     <nav className={styles.NavBar}>
-      <LinkButton to="/" className={styles.homeBtn}>
+      <Link to="/" className={styles.homeBtn + " " + styles.navBtn}>
         Home
-      </LinkButton>
-      <LinkButton to="products" className={styles.productsBtn}>
+      </Link>
+      <Link to="products" className={styles.productsBtn + " " + styles.navBtn}>
         Shop
-      </LinkButton>
-      <button className={styles.cartBtn}>Cart</button>
+      </Link>
+      <button className={styles.cartBtn + " " + styles.navBtn}>Cart</button>
     </nav>
   );
 };
