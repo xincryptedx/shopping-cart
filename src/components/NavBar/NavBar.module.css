@@ -26,6 +26,14 @@
   background-color: var(--bg-light-1);
   min-width: 125px;
   max-width: 275px;
+
+  height: 0px;
+  overflow: hidden;
+}
+
+.navLinksOpen {
+  height: auto;
+  overflow: auto;
 }
 
 .navLinks ul {
