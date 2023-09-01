@@ -21,32 +21,6 @@
   font-size: 14px;
 }
 
-.navBtn {
-  background-color: rgb(239, 239, 239);
-  color: black;
-  text-decoration: none;
-  text-align: center;
-
-  align-items: flex-start;
-  box-sizing: border-box;
-
-  padding: 1px 6px;
-
-  border: 1px solid rgb(118, 118, 118);
-  border-style: outset;
-  border-radius: 3px;
-
-  cursor: default;
-}
-
-.navBtn:hover {
-  background-color: rgb(229, 229, 229);
-}
-
-.navBtn:active {
-  background-color: rgb(244, 244, 244);
-}
-
 .productsBtn {
   justify-self: start;
 }
