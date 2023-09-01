@@ -16,7 +16,7 @@
   border: 3px solid black;
 
   min-height: 45px;
-  max-height: 80px;
+  max-height: 65px;
 
   font-size: 14px;
 }
@@ -53,6 +53,11 @@
 
 .homeBtn {
   justify-self: center;
+  max-height: inherit;
+}
+
+.homeBtn img {
+  max-height: 100%;
 }
 
 .cartBtn {
