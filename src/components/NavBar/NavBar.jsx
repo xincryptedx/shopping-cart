@@ -4,21 +4,21 @@ import logoSmall from "../../assets/logoIconSmall.svg";
 import { useState } from "react";
 
 const NavBar = () => {
-  const [navMenuOpen, setNavMenuOpen] = useState(false);
+  const [navLinksOpen, setNavLinksOpen] = useState(false);
 
-  const toggleNavMenuOpen = () => {
-    setNavMenuOpen((previous) => !previous);
+  const toggleNavLinksOpen = () => {
+    setNavLinksOpen((previous) => !previous);
   };
 
   return (
     <nav className={styles.NavBar}>
-      <button className={styles.menuBtn} onClick={toggleNavMenuOpen}>
+      <button className={styles.menuBtn} onClick={toggleNavLinksOpen}>
         Menu
       </button>
       <div
         className={
-          navMenuOpen
-            ? styles.navMenuOpen + " " + styles.navLinks
+          navLinksOpen
+            ? styles.navLinksOpen + " " + styles.navLinks
             : styles.navLinks
         }
       >
