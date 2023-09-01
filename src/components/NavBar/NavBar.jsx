@@ -6,7 +6,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 
 const NavBar = () => {
   const [navLinksOpen, setNavLinksOpen] = useState(false);
-  const menuRef = useRef(null);
+  const linksRef = useRef(null);
 
   const toggleNavLinksOpen = (event) => {
     event.stopPropagation();
@@ -17,7 +17,8 @@ const NavBar = () => {
     setNavLinksOpen(false);
   };
 
-  useClickOutside(menuRef, navLinksOpen, closeNavLinks);
+  // Closes nav links by setting state when click outside of div
+  useClickOutside(linksRef, navLinksOpen, closeNavLinks);
 
   return (
     <nav className={styles.NavBar}>
@@ -30,7 +31,7 @@ const NavBar = () => {
             ? styles.navLinksOpen + " " + styles.navLinks
             : styles.navLinks
         }
-        ref={menuRef}
+        ref={linksRef}
       >
         <ul>
           <Link
