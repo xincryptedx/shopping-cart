@@ -2,18 +2,26 @@ import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import logoSmall from "../../assets/logoIconSmall.svg";
 import { useRef, useState } from "react";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const NavBar = () => {
   const [navLinksOpen, setNavLinksOpen] = useState(false);
   const menuRef = useRef(null);
 
-  const toggleNavLinksOpen = () => {
+  const toggleNavLinksOpen = (event) => {
+    event.stopPropagation();
     setNavLinksOpen((previous) => !previous);
   };
 
+  const closeNavLinks = () => {
+    setNavLinksOpen(false);
+  };
+
+  useClickOutside(menuRef, navLinksOpen, closeNavLinks);
+
   return (
     <nav className={styles.NavBar}>
-      <button className={styles.menuBtn} onClick={toggleNavLinksOpen}>
+      <button className={styles.menuBtn} onClick={(e) => toggleNavLinksOpen(e)}>
         Menu
       </button>
       <div
