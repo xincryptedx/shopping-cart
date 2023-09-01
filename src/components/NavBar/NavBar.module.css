@@ -47,11 +47,11 @@
   background-color: rgb(244, 244, 244);
 }
 
-.homeBtn {
+.productsBtn {
   justify-self: start;
 }
 
-.productsBtn {
+.homeBtn {
   justify-self: center;
 }
 
