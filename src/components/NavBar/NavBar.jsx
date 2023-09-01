@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import logoSmall from "../../assets/logoIconSmall.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const NavBar = () => {
   const [navLinksOpen, setNavLinksOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleNavLinksOpen = () => {
     setNavLinksOpen((previous) => !previous);
@@ -21,6 +22,7 @@ const NavBar = () => {
             ? styles.navLinksOpen + " " + styles.navLinks
             : styles.navLinks
         }
+        ref={menuRef}
       >
         <ul>
           <Link
