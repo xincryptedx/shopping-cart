@@ -23,7 +23,12 @@ const NavBar = () => {
         }
       >
         <ul>
-          <Link to="products" className={styles.productsBtn}>
+          <Link
+            to="products"
+            className={styles.productsBtn}
+            onFocus={() => setNavLinksOpen(true)}
+            onBlur={() => setNavLinksOpen(false)}
+          >
             Prize Counter
           </Link>
         </ul>
