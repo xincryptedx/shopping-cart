@@ -2,6 +2,7 @@
   display: grid;
   grid-auto-flow: column;
   grid-template: 1fr / 1fr 1fr 1fr;
+  align-items: center;
 
   position: relative;
 
@@ -19,15 +20,23 @@
   max-height: 65px;
 }
 
+.menuBtn {
+  justify-self: start;
+  margin-left: 10px;
+  max-height: 58px;
+}
+
 .homeBtn {
   justify-self: center;
-  max-height: inherit;
+  margin: 5px 0px;
+  max-height: 58px;
 }
 
 .homeBtn img {
-  max-height: 100%;
+  max-height: inherit;
 }
 
 .cartBtn {
   justify-self: end;
+  margin-right: 10px;
 }
