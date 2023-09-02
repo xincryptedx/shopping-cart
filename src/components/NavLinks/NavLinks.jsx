@@ -22,6 +22,7 @@ const NavLinks = ({ className, setNavLinksOpen }) => {
           className={styles.productsBtn}
           onFocus={() => setNavLinksOpen(true)}
           onBlur={() => setNavLinksOpen(false)}
+          onClick={() => setNavLinksOpen(false)}
         >
           Prize Counter
         </Link>
