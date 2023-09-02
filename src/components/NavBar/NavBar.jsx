@@ -26,8 +26,8 @@ const NavBar = ({ setNavLinksOpen }) => {
         alt="links menu button"
         className={styles.menuBtn}
         tabIndex="0"
-        onClick={(e) => toggleNavLinksOpen(e)}
-        onKeyDown={(e) => handleKeyDownMenuIcon(e)}
+        onClick={toggleNavLinksOpen}
+        onKeyDown={handleKeyDownMenuIcon}
       />
 
       <Link to="/" className={styles.homeBtn}>
