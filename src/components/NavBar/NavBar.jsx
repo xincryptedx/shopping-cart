@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import logoSmall from "../../assets/logoIconSmall.svg";
 import menuIcon from "../../assets/menuIcon.svg";
+import cartIcon from "../../assets/cartIcon.svg";
 import PropTypes from "prop-types";
 
 const NavBar = ({ setNavLinksOpen }) => {
@@ -14,7 +15,7 @@ const NavBar = ({ setNavLinksOpen }) => {
     <nav className={styles.NavBar}>
       <img
         src={menuIcon}
-        alt="links menu icon"
+        alt="links menu button"
         className={styles.menuBtn}
         onClick={(e) => toggleNavLinksOpen(e)}
       />
@@ -22,7 +23,7 @@ const NavBar = ({ setNavLinksOpen }) => {
       <Link to="/" className={styles.homeBtn}>
         <img src={logoSmall} alt="Rocket Game Corner home button" />
       </Link>
-      <button className={styles.cartBtn}>Cart</button>
+      <img src={cartIcon} alt="cart icon button" className={styles.cartBtn} />
     </nav>
   );
 };
