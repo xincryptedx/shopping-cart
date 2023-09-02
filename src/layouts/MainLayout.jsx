@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
+import NavLinks from "../components/NavLinks/NavLinks";
 import styles from "./MainLayout.module.css";
 import { useState } from "react";
 
@@ -9,6 +10,7 @@ const MainLayout = () => {
   return (
     <div className={styles.MainLayout}>
       <NavBar navLinksOpen={navLinksOpen} setNavLinksOpen={setNavLinksOpen} />
+      <NavLinks className={styles.NavLinks} setNavLinksOpen={setNavLinksOpen} />
       <main>
         <Outlet />
       </main>

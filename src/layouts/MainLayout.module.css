@@ -18,3 +18,11 @@
   --trinary-1: #f7e5c2;
   --trinary-2: #fdba30;
 }
+
+.MainLayout {
+  position: relative;
+}
+
+.NavLinks {
+  position: absolute;
+}
