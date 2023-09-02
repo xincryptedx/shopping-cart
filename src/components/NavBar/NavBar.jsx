@@ -17,13 +17,19 @@ const NavBar = ({ setNavLinksOpen }) => {
         src={menuIcon}
         alt="links menu button"
         className={styles.menuBtn}
+        tabIndex="0"
         onClick={(e) => toggleNavLinksOpen(e)}
       />
 
       <Link to="/" className={styles.homeBtn}>
         <img src={logoSmall} alt="Rocket Game Corner home button" />
       </Link>
-      <img src={cartIcon} alt="cart icon button" className={styles.cartBtn} />
+      <img
+        src={cartIcon}
+        alt="cart icon button"
+        className={styles.cartBtn}
+        tabIndex="0"
+      />
     </nav>
   );
 };
