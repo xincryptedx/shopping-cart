@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./NavLinks.module.css";
 import PropTypes from "prop-types";
+import cancelIcon from "../../assets/cancel.svg";
 
 const NavLinks = ({ className, setNavLinksOpen }) => {
   return (
@@ -9,6 +10,12 @@ const NavLinks = ({ className, setNavLinksOpen }) => {
         className ? className + " " + styles.NavLinks : styles.NavLinks
       }
     >
+      <img
+        src={cancelIcon}
+        alt="cancel button"
+        className={styles.cancelBtn}
+        onClick={() => setNavLinksOpen(false)}
+      />
       <ul>
         <Link
           to="products"
