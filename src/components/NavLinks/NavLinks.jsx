@@ -8,7 +8,7 @@ const NavLinks = ({ className, setNavLinksOpen }) => {
       <ul>
         <Link
           to="products"
-          className={styles.productsBtn}
+          className={className ? styles.productsBtn : ""}
           onFocus={() => setNavLinksOpen(true)}
           onBlur={() => setNavLinksOpen(false)}
         >
