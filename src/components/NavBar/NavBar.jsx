@@ -11,6 +11,14 @@ const NavBar = ({ setNavLinksOpen }) => {
     setNavLinksOpen((previous) => !previous);
   };
 
+  const handleKeyDownMenuIcon = (event) => {
+    const { key } = event;
+    console.log(key);
+    if (key === "Enter" || key === " ") {
+      setNavLinksOpen(true);
+    }
+  };
+
   return (
     <nav className={styles.NavBar}>
       <img
@@ -19,6 +27,7 @@ const NavBar = ({ setNavLinksOpen }) => {
         className={styles.menuBtn}
         tabIndex="0"
         onClick={(e) => toggleNavLinksOpen(e)}
+        onKeyDown={(e) => handleKeyDownMenuIcon(e)}
       />
 
       <Link to="/" className={styles.homeBtn}>
