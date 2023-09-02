@@ -13,13 +13,13 @@ const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
       }
     };
     if (navLinksOpen) {
-      document.addEventListener("keydown", (e) => closeNavLinks(e));
+      document.addEventListener("keydown", closeNavLinks);
     } else {
-      document.removeEventListener("keydown", (e) => closeNavLinks(e));
+      document.removeEventListener("keydown", closeNavLinks);
     }
 
     return () => {
-      document.removeEventListener("keydown", (e) => closeNavLinks(e));
+      document.removeEventListener("keydown", closeNavLinks);
     };
   }, [navLinksOpen, setNavLinksOpen]);
 
