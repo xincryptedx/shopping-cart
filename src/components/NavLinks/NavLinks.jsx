@@ -7,8 +7,8 @@ import { useEffect } from "react";
 const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
   useEffect(() => {
     const closeNavLinks = (event) => {
-      const key = event;
-      if (key === "escape") {
+      const { key } = event;
+      if (key === "Escape") {
         setNavLinksOpen(false);
       }
     };
