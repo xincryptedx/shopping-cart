@@ -23,20 +23,21 @@
 .menuBtn {
   justify-self: start;
   margin-left: 10px;
-  max-height: 58px;
+  height: 58px;
 }
 
 .homeBtn {
   justify-self: center;
   margin: 5px 0px;
-  max-height: 58px;
+  height: 58px;
 }
 
 .homeBtn img {
-  max-height: inherit;
+  height: inherit;
 }
 
 .cartBtn {
   justify-self: end;
   margin-right: 10px;
+  height: 46px;
 }
