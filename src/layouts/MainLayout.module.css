@@ -26,5 +26,10 @@
 .NavLinks {
   position: absolute;
   top: 0;
-  right: 100%;
+  left: -100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.NavLinksOpen {
+  transform: translateX(100%);
 }
