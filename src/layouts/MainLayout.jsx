@@ -16,6 +16,7 @@ const MainLayout = () => {
             ? styles.NavLinksOpen + " " + styles.NavLinks
             : styles.NavLinks
         }
+        navLinksOpen={navLinksOpen}
         setNavLinksOpen={setNavLinksOpen}
       />
       <main>
