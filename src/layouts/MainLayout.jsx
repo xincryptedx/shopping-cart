@@ -10,7 +10,14 @@ const MainLayout = () => {
   return (
     <div className={styles.MainLayout}>
       <NavBar navLinksOpen={navLinksOpen} setNavLinksOpen={setNavLinksOpen} />
-      <NavLinks className={styles.NavLinks} setNavLinksOpen={setNavLinksOpen} />
+      <NavLinks
+        className={
+          navLinksOpen
+            ? styles.NavLinksOpen + " " + styles.NavLinks
+            : styles.NavLinks
+        }
+        setNavLinksOpen={setNavLinksOpen}
+      />
       <main>
         <Outlet />
       </main>
