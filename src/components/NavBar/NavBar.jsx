@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import logoSmall from "../../assets/logoIconSmall.svg";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import PropTypes from "prop-types";
 import useClickOutside from "../../hooks/useClickOutside";
 
-const NavBar = () => {
-  const [navLinksOpen, setNavLinksOpen] = useState(false);
+const NavBar = ({ navLinksOpen, setNavLinksOpen }) => {
   const linksRef = useRef(null);
 
   const toggleNavLinksOpen = (event) => {
@@ -50,6 +50,11 @@ const NavBar = () => {
       <button className={styles.cartBtn}>Cart</button>
     </nav>
   );
+};
+
+NavBar.propTypes = {
+  navLinksOpen: PropTypes.bool.isRequired,
+  setNavLinksOpen: PropTypes.func.isRequired,
 };
 
 export default NavBar;
