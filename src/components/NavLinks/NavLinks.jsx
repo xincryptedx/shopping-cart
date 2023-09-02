@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import styles from "./NavLinks.module.css";
 import PropTypes from "prop-types";
 
-const NavLinks = ({ setNavLinksOpen }) => {
+const NavLinks = ({ className, setNavLinksOpen }) => {
   return (
-    <aside>
+    <aside className={className}>
       <ul>
         <Link
           to="products"
@@ -20,7 +20,7 @@ const NavLinks = ({ setNavLinksOpen }) => {
 };
 
 NavLinks.propTypes = {
-  navLinksOpen: PropTypes.bool.isRequired,
+  className: PropTypes.string,
   setNavLinksOpen: PropTypes.func.isRequired,
 };
 
