@@ -4,11 +4,15 @@ import PropTypes from "prop-types";
 
 const NavLinks = ({ className, setNavLinksOpen }) => {
   return (
-    <aside className={className}>
+    <aside
+      className={
+        className ? className + " " + styles.NavLinks : styles.NavLinks
+      }
+    >
       <ul>
         <Link
           to="products"
-          className={className ? styles.productsBtn : ""}
+          className={styles.productsBtn}
           onFocus={() => setNavLinksOpen(true)}
           onBlur={() => setNavLinksOpen(false)}
         >
