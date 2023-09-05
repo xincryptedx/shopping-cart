@@ -5,7 +5,7 @@ import menuIcon from "../../assets/menuIcon.svg";
 import cartIcon from "../../assets/cartIcon.svg";
 import PropTypes from "prop-types";
 
-const NavBar = ({ setNavLinksOpen }) => {
+const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
   const toggleNavLinksOpen = (event) => {
     event.stopPropagation();
     setNavLinksOpen((previous) => !previous);
@@ -13,9 +13,20 @@ const NavBar = ({ setNavLinksOpen }) => {
 
   const handleKeyDownMenuIcon = (event) => {
     const { key } = event;
-    console.log(key);
     if (key === "Enter" || key === " ") {
       setNavLinksOpen(true);
+    }
+  };
+
+  const toggleShoppingCartOpen = (event) => {
+    event.stopPropagation();
+    setShoppingCartOpen((previous) => !previous);
+  };
+
+  const handleKeyDownShoppingCartIcon = (event) => {
+    const { key } = event;
+    if (key === "Enter" || key === " ") {
+      setShoppingCartOpen(true);
     }
   };
 
@@ -33,18 +44,21 @@ const NavBar = ({ setNavLinksOpen }) => {
       <Link to="/" className={styles.homeBtn}>
         <img src={logoSmall} alt="Rocket Game Corner home button" />
       </Link>
+
       <img
         src={cartIcon}
         alt="cart icon button"
         className={styles.cartBtn}
         tabIndex="0"
+        onClick={toggleShoppingCartOpen}
+        onKeyDown={handleKeyDownShoppingCartIcon}
       />
     </nav>
   );
 };
 
 NavBar.propTypes = {
-  navLinksOpen: PropTypes.bool.isRequired,
+  setShoppingCartOpen: PropTypes.func.isRequired,
   setNavLinksOpen: PropTypes.func.isRequired,
 };
 
