@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const ShoppingCart = ({ setShoppingCartOpen }) => {
   return (
-    <aside>
+    <aside className={styles.ShoppingCart}>
       <img
         src={cancelIcon}
         alt="cancel button"
