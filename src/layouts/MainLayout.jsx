@@ -11,7 +11,11 @@ const MainLayout = () => {
 
   return (
     <div className={styles.MainLayout}>
-      <NavBar navLinksOpen={navLinksOpen} setNavLinksOpen={setNavLinksOpen} />
+      <NavBar
+        navLinksOpen={navLinksOpen}
+        setNavLinksOpen={setNavLinksOpen}
+        setShoppingCartOpen={setShoppingCartOpen}
+      />
       <NavLinks
         className={
           navLinksOpen
@@ -21,14 +25,16 @@ const MainLayout = () => {
         navLinksOpen={navLinksOpen}
         setNavLinksOpen={setNavLinksOpen}
       />
+
       <ShoppingCart
         className={
           shoppingCartOpen
             ? styles.ShoppingCartOpen + " " + styles.ShoppingCart
             : styles.ShoppingCart
         }
-        setNavLinksOpen={setShoppingCartOpen}
+        setShoppingCartOpen={setShoppingCartOpen}
       />
+
       <main>
         <Outlet />
       </main>
