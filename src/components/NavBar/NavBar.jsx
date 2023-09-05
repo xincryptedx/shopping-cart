@@ -14,7 +14,16 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
   const handleKeyDownMenuIcon = (event) => {
     const { key } = event;
     if (key === "Enter" || key === " ") {
+      event.preventDefault();
       setNavLinksOpen(true);
+    }
+  };
+
+  const handleKeyDownHomeIcon = (event) => {
+    const { key } = event;
+    if (key === " ") {
+      event.preventDefault();
+      event.target.click();
     }
   };
 
@@ -26,6 +35,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
   const handleKeyDownShoppingCartIcon = (event) => {
     const { key } = event;
     if (key === "Enter" || key === " ") {
+      event.preventDefault();
       setShoppingCartOpen(true);
     }
   };
@@ -41,7 +51,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
         onKeyDown={handleKeyDownMenuIcon}
       />
 
-      <Link to="/" className={styles.homeBtn}>
+      <Link to="/" className={styles.homeBtn} onKeyDown={handleKeyDownHomeIcon}>
         <img src={logoSmall} alt="Rocket Game Corner home button" />
       </Link>
 
