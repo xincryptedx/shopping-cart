@@ -2,26 +2,11 @@ import { Link } from "react-router-dom";
 import styles from "./NavLinks.module.css";
 import PropTypes from "prop-types";
 import cancelIcon from "../../assets/cancel.svg";
-import { useEffect } from "react";
+import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
 
 const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
-  useEffect(() => {
-    const closeNavLinks = (event) => {
-      const { key } = event;
-      if (key === "Escape") {
-        setNavLinksOpen(false);
-      }
-    };
-    if (navLinksOpen) {
-      document.addEventListener("keydown", closeNavLinks);
-    } else {
-      document.removeEventListener("keydown", closeNavLinks);
-    }
-
-    return () => {
-      document.removeEventListener("keydown", closeNavLinks);
-    };
-  }, [navLinksOpen, setNavLinksOpen]);
+  // Close NavLinks on escape key
+  useSetStateOnKeydown("Escape", navLinksOpen, setNavLinksOpen, false);
 
   return (
     <aside
