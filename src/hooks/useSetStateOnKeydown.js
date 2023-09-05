@@ -4,7 +4,6 @@ const useSetStateOnKeydown = (key, state, setState, desiredState) => {
   useEffect(() => {
     const handleKeydown = (event) => {
       const { key: pressedKey } = event;
-      console.log(pressedKey);
       if (pressedKey === key) {
         setState(desiredState);
       }
