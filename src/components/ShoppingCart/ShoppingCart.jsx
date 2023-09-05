@@ -2,9 +2,13 @@ import styles from "./ShoppingCart.module.css";
 import cancelIcon from "../../assets/cancel.svg";
 import PropTypes from "prop-types";
 
-const ShoppingCart = ({ setShoppingCartOpen }) => {
+const ShoppingCart = ({ className, setShoppingCartOpen }) => {
   return (
-    <aside className={styles.ShoppingCart}>
+    <aside
+      className={
+        className ? className + " " + styles.ShoppingCart : styles.ShoppingCart
+      }
+    >
       <img
         src={cancelIcon}
         alt="cancel button"
@@ -17,6 +21,7 @@ const ShoppingCart = ({ setShoppingCartOpen }) => {
 };
 
 ShoppingCart.propTypes = {
+  className: PropTypes.string,
   setShoppingCartOpen: PropTypes.func.isRequired,
 };
 

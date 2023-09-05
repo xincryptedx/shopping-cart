@@ -33,3 +33,14 @@
 .NavLinksOpen {
   transform: translateX(100%);
 }
+
+.ShoppingCart {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ShoppingCartOpen {
+  transform: translateX(100%);
+}
