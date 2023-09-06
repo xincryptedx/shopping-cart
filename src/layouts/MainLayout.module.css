@@ -25,6 +25,10 @@ p {
   margin: 0;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .MainLayout {
   position: relative;
   height: 100vh;
