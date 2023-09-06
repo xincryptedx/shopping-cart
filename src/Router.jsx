@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useFetchPokemon from "./hooks/useFetchPokemon";
 import MainLayout from "./layouts/MainLayout";
-import Root from "./routes/root";
+import Root from "./routes/root/root";
 import ErrorPage from "./routes/ErrorPage";
 import Products from "./routes/products";
 
