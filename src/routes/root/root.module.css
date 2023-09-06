@@ -20,13 +20,16 @@
 
 .cta1 {
   font-size: 1.5rem;
+  text-shadow: 1px 1px 2px black;
 }
 
 .cta2 {
   font-size: 4rem;
+  text-shadow: 1px 1px 4px black;
   margin: 20px 0;
 }
 
 .cta3 {
   font-size: 1.5rem;
+  text-shadow: 1px 1px 2px black;
 }
