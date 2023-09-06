@@ -36,7 +36,7 @@ const MainLayout = () => {
         setShoppingCartOpen={setShoppingCartOpen}
       />
 
-      <main>
+      <main className={styles.routeContainer}>
         <Outlet />
       </main>
     </div>
