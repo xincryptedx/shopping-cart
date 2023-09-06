@@ -1,6 +1,8 @@
+import styles from "./root.module.css";
+
 const Root = () => {
   return (
-    <div>
+    <div className={styles.rootRoute}>
       <p>This is the root route!</p>
     </div>
   );
