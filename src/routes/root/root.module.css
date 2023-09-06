@@ -30,6 +30,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   text-shadow: 2px 2px 2px black;
+  z-index: 1;
 }
 
 .callToAction .cta2 {
