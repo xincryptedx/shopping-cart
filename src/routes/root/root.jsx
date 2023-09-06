@@ -4,6 +4,7 @@ const Root = () => {
   return (
     <div className={styles.rootRoute}>
       <section className={styles.callToAction}>
+        <div className={styles.ctaBackgroundImage} aria-hidden />
         <p className={styles.cta1}>
           Rocket Game Corner is a convenient option for busy trainers who wish
           to expand their Pokemon collection.
