@@ -8,7 +8,7 @@
 
 .callToAction {
   background-color: var(--secondary-2);
-  background-image: url(/public/pokeballPattern.png);
+  background-image: url(/public/pokeballPatternTransparent.png);
   padding: 10px;
   margin: 5px 5px;
   height: min-content;
