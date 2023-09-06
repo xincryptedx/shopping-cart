@@ -24,6 +24,8 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: grid;
+  grid-template: min-content 1fr / 1fr;
 }
 
 .NavLinks {
@@ -46,4 +48,8 @@
 
 .ShoppingCartOpen {
   transform: translateX(-100%);
+}
+
+.routeContainer {
+  height: 100%;
 }
