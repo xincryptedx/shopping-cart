@@ -16,6 +16,8 @@
     rgba(2, 0, 36, 1) 100%
   );
 
+  border-bottom: 1px solid black;
+
   min-height: 45px;
   max-height: 65px;
 }
