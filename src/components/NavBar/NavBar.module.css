@@ -26,6 +26,7 @@
   justify-self: start;
   margin-left: 10px;
   height: 58px;
+  cursor: pointer;
 }
 
 .homeBtn {
@@ -42,4 +43,5 @@
   justify-self: end;
   margin-right: 10px;
   height: 46px;
+  cursor: pointer;
 }
