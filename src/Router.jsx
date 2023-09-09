@@ -3,7 +3,7 @@ import useFetchPokemon from "./hooks/useFetchPokemon";
 import MainLayout from "./layouts/MainLayout";
 import Root from "./routes/root/root";
 import ErrorPage from "./routes/ErrorPage";
-import Products from "./routes/products";
+import Products from "./routes/products/products";
 
 const Router = () => {
   const { pokemon, error, loading } = useFetchPokemon();
