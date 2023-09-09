@@ -2,7 +2,7 @@ import styles from "./CallToAction.module.css";
 
 const CallToAction = () => {
   return (
-    <section className={styles.callToAction}>
+    <section className={styles.CallToAction}>
       <div className={styles.ctaBackgroundImage} aria-hidden />
       <p>
         Rocket Game Corner is a convenient option for busy trainers who wish to
