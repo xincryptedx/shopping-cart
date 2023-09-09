@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import styles from "./CallToAction.module.css";
 
 const CallToAction = () => {
   return (
-    <section className={styles.CallToAction}>
+    <Link to="products" className={styles.CallToAction}>
       <div className={styles.ctaBackgroundImage} aria-hidden />
       <p>
         Rocket Game Corner is a convenient option for busy trainers who wish to
@@ -13,7 +14,7 @@ const CallToAction = () => {
         Our unique approach allows us to provide Pokemon at competitive rates
         from sources aligned with our values.
       </p>
-    </section>
+    </Link>
   );
 };
 
