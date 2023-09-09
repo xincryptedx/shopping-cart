@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import styles from "./products.module.css";
 
 const Products = ({ pokemon, error, loading }) => {
   if (error)
@@ -16,7 +17,7 @@ const Products = ({ pokemon, error, loading }) => {
     );
 
   return (
-    <div>
+    <div className={styles.productsRoute}>
       <p>This is the products route!</p>
       <p>Pokemon have been loaded!</p>
       {pokemon.map((mon) => (
