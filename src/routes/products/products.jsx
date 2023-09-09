@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import styles from "./products.module.css";
 
 const Products = () => {
@@ -9,10 +8,6 @@ const Products = () => {
   );
 };
 
-Products.propTypes = {
-  pokemon: PropTypes.arrayOf(PropTypes.object).isRequired,
-  error: PropTypes.instanceOf(Error),
-  loading: PropTypes.bool.isRequired,
-};
+Products.propTypes = {};
 
 export default Products;
