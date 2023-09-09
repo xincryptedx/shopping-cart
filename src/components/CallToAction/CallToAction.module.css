@@ -1,4 +1,5 @@
 .CallToAction {
+  text-decoration: none;
   background-color: var(--secondary-2);
   padding: 10px;
   margin: 5px 5px;
@@ -18,6 +19,7 @@
 }
 
 .CallToAction p {
+  color: var(--text-light);
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
