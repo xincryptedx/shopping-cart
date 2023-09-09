@@ -5,36 +5,3 @@
 
   display: grid;
 }
-
-.callToAction {
-  background-color: var(--secondary-2);
-  padding: 10px;
-  margin: 5px 5px;
-  height: min-content;
-  display: grid;
-  row-gap: 10px;
-  box-shadow: 0px 1px 1px rgb(37, 37, 37);
-  position: relative;
-}
-
-.ctaBackgroundImage {
-  background-image: url(/public/pokeballPattern.png);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  opacity: 20%;
-}
-
-.callToAction p {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-shadow: 3px 3px 2px black;
-  z-index: 1;
-}
-
-.callToAction .cta2 {
-  font-size: 3.5rem;
-  text-shadow: 5px 5px 2px black;
-  margin: 20px 0;
-}
