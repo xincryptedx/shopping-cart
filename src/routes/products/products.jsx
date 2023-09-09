@@ -8,6 +8,4 @@ const Products = () => {
   );
 };
 
-Products.propTypes = {};
-
 export default Products;
