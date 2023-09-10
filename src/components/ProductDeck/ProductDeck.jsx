@@ -1,10 +1,15 @@
+import ProductCard from "../ProductCard/ProductCard";
 import styles from "./ProductDeck.module.css";
 
 const ProductDeck = () => {
   return (
     <section className={styles.ProductDeck}>
-      <p>Im a card!</p>
-      <p>Im a card!</p>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
     </section>
   );
 };
