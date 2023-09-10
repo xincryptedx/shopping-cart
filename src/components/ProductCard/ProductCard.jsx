@@ -3,9 +3,9 @@ import styles from "./ProductCard.module.css";
 const ProductCard = () => {
   return (
     <div className={styles.ProductCard}>
-      <p>Pokemon Picture</p>
-      <p>Pokemon Name</p>
-      <p>Price</p>
+      <img src="" alt="" className={styles.image} />
+      <p className={styles.name}>Pokemon Name</p>
+      <p className={styles.price}>Price</p>
     </div>
   );
 };
