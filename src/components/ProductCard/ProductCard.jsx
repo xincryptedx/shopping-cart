@@ -6,7 +6,7 @@ const ProductCard = () => {
     <div className={styles.ProductCard}>
       <img src="" alt="" className={styles.image} />
       <p className={styles.name}>Crabominable</p>
-      <p className={styles.price}>Price</p>
+      <p className={styles.price}>1,000</p>
       <img
         src={pokedollar}
         alt="pokedollar sign"
