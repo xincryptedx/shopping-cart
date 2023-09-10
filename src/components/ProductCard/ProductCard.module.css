@@ -11,15 +11,30 @@
   box-sizing: border-box;
 
   display: grid;
-  grid-template: 115px 1fr 1fr / 1fr;
+  grid-template: 115px 1fr 1fr / 1fr min-content;
+  grid-template-areas:
+    "image image"
+    "name name"
+    "pokedollar price";
   place-items: center;
 }
 
+.image {
+  grid-area: image;
+}
+
 .name {
+  grid-area: name;
   font-size: 1.2rem;
 }
 
 .price {
-  justify-self: end;
+  grid-area: price;
   padding-right: 5px;
+}
+
+.pokedollar {
+  grid-area: pokedollar;
+  height: 15px;
+  justify-self: end;
 }
