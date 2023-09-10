@@ -1,7 +1,25 @@
 .ProductCard {
-  background-color: var(--bg-light-1);
   color: var(--text-dark);
+  font-weight: bold;
 
   height: 175px;
   width: 150px;
+  background-color: var(--bg-light-1);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+  border: 3px solid var(--bg-light-2);
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template: 115px 1fr 1fr / 1fr;
+  place-items: center;
+}
+
+.name {
+  font-size: 1.2rem;
+}
+
+.price {
+  justify-self: end;
+  padding-right: 5px;
 }
