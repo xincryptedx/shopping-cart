@@ -1,0 +1,9 @@
+.SortAndFilter {
+  background-color: var(--bg-light-2);
+  height: min-content;
+  padding: 5px 10px;
+
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
+}
