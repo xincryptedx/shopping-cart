@@ -15,6 +15,11 @@ const Products = () => {
 
   // Prepare pokemon data
 
+  // If loading show dummy deck
+
+  // If error show error message
+
+  // If all data loaded show deck with cards for each prepared pokemon
   return (
     <div className={styles.productsRoute}>
       <SortAndFilter />
