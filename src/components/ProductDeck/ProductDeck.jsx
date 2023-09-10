@@ -10,6 +10,12 @@ const ProductDeck = () => {
       <ProductCard />
       <ProductCard />
       <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
     </section>
   );
 };
