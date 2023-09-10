@@ -21,7 +21,7 @@ const useFetchPokemon = (generation = 1) => {
       .then((response) => setPokemon([{ ...response }]))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [generation]);
 
   return { pokemon, error, loading };
 };
