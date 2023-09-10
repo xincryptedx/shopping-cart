@@ -18,7 +18,7 @@ const useFetchPokemon = (generation = 1) => {
         }
         return response.json();
       })
-      .then((response) => setPokemon([{ ...response }]))
+      .then((response) => setPokemon([{ ...response.pokemon_species }]))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, [generation]);
