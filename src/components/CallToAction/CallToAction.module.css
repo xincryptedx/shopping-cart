@@ -11,7 +11,7 @@
 }
 
 .ctaBackgroundImage {
-  background-image: url(/public/pokeballPattern.png);
+  background-image: url(/pokeballPattern.png);
   height: 100%;
   width: 100%;
   position: absolute;
