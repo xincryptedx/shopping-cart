@@ -4,5 +4,5 @@
   height: 100%;
 
   display: grid;
-  grid-auto-rows: min-content;
+  grid-template: min-content 1fr / 1fr;
 }
