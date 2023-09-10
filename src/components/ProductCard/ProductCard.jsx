@@ -4,7 +4,7 @@ const ProductCard = () => {
   return (
     <div className={styles.ProductCard}>
       <img src="" alt="" className={styles.image} />
-      <p className={styles.name}>Pokemon Name</p>
+      <p className={styles.name}>Crabominable</p>
       <p className={styles.price}>Price</p>
     </div>
   );
