@@ -42,7 +42,6 @@ const useFetchPokemon = (region = "kanto") => {
     };
 
     const getPokemonDetails = async (pokedexData) => {
-      console.log(pokedexData);
       // Select random stock amount
       const minStock = 2;
       const maxStock = 5;
@@ -61,18 +60,15 @@ const useFetchPokemon = (region = "kanto") => {
       // Async fetch details for all chosenPokemon
       const promises = chosenPokemon.map(async (entry) => {
         try {
-          console.log(entry);
           const response = await fetch(entry.pokemon_species.url, {
             mode: "cors",
           });
           if (response.status >= 400) {
             throw new Error("pokemon fetch error");
           }
-          console.log("Response Data:", response);
           return response.json();
         } catch (error) {
           setError(error);
-          console.log(error);
           return null;
         }
       });
