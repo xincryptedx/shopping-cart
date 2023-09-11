@@ -5,9 +5,7 @@ const useFetchPokemon = (region = "kanto") => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Make sure region is lowercase
   let validatedRegion = region.toString().toLocaleLowerCase();
-  // Check that region is valid and set to default if invalid
   const validRegions = [
     "kanto",
     "johto",
@@ -36,7 +34,7 @@ const useFetchPokemon = (region = "kanto") => {
       .then((response) => setPokemon([{ ...response.pokemon_entries }]))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, [region]);
+  }, [validatedRegion, region]);
 
   return { pokemon, error, loading };
 };
