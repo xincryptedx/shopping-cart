@@ -5,9 +5,13 @@ const usePreparePokemon = (pokemon) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Select some random pokemon
-  // Query the data, format, and push to shopPokemon for each selected pokemon
-  // After they are loaded set loading to false
+  useState(() => {
+    // Select some random pokemon
+    // Query the data, format, and push to shopPokemon for each selected pokemon
+    // After they are loaded set loading to false
+  });
+
+  return { shopPokemon, error, loading };
 };
 
 export default usePreparePokemon;
