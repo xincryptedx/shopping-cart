@@ -3,6 +3,7 @@ import ProductDeck from "../../components/ProductDeck/ProductDeck";
 import SortAndFilter from "../../components/SortAndFilter/SortAndFilter";
 import useFetchPokemon from "../../hooks/useFetchPokemon";
 import styles from "./products.module.css";
+import usePreparePokemon from "../../hooks/usePreparePokemon";
 
 const Products = () => {
   const [region, setRegion] = useState("kanto");
@@ -14,6 +15,11 @@ const Products = () => {
   } = useFetchPokemon(region);
 
   // Prepare pokemon data
+  const {
+    shopPokemon,
+    loading: shopPokemonLoading,
+    error: shopPokemonError,
+  } = usePreparePokemon(pokemon);
 
   // If loading show dummy deck
 
