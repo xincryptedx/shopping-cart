@@ -1,15 +1,30 @@
 import { useEffect, useState } from "react";
 
-const useFetchPokemon = (generation = 1) => {
-  //There are only nine generations as of now
-  generation = Math.min(Math.max(1, generation), 9);
-
+const useFetchPokemon = (region = "kanto") => {
   const [pokemon, setPokemon] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Make sure region is lowercase
+  let validatedRegion = region.toString().toLocaleLowerCase();
+  // Check that region is valid and set to default if invalid
+  const validRegions = [
+    "kanto",
+    "johto",
+    "hoenn",
+    "sinnoh",
+    "unova",
+    "kalos",
+    "alola",
+    "galar",
+    "paldea",
+  ];
+  if (!validRegions.includes(validatedRegion)) {
+    validatedRegion = "kanto";
+  }
+
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/generation/${generation}`, {
+    fetch(`https://pokeapi.co/api/v2/pokedex/${validatedRegion}`, {
       mode: "cors",
     })
       .then((response) => {
@@ -18,10 +33,10 @@ const useFetchPokemon = (generation = 1) => {
         }
         return response.json();
       })
-      .then((response) => setPokemon([{ ...response.pokemon_species }]))
+      .then((response) => setPokemon([{ ...response.pokemon_entries }]))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, [generation]);
+  }, [region]);
 
   return { pokemon, error, loading };
 };
