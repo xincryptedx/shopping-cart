@@ -8,8 +8,8 @@ const usePreparePokemon = (pokemon) => {
 
   useEffect(() => {
     // Select random stock amount
-    const minStock = 30;
-    const maxStock = 100;
+    const minStock = 20;
+    const maxStock = 30;
     const stockNum =
       Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
 
@@ -24,23 +24,23 @@ const usePreparePokemon = (pokemon) => {
 
     // Async fetch details for all chosenPokemon
     const fetchPokemonDetails = async () => {
-      const promises = chosenPokemon
-        .map((entry) => fetch(entry.pokemon_species.url, { mode: "cors" }))
-        .then((response) => {
+      const promises = chosenPokemon.map(async (entry) => {
+        try {
+          const response = await fetch(entry.pokemon_species.url, {
+            mode: "cors",
+          });
           if (response.status >= 400) {
             throw new Error("pokemon fetch error");
           }
           return response.json();
-        })
-        .catch((error) => {
+        } catch (error) {
           setError(error);
           return null;
-        });
+        }
+      });
 
-      // Await all the fetch requests
       const pokemonDetailsData = await Promise.all(promises);
 
-      // Filter out null results
       const filteredPokemonData = pokemonDetailsData.filter(
         (data) => data !== null
       );
