@@ -6,10 +6,16 @@ const usePreparePokemon = (pokemon) => {
   const [loading, setLoading] = useState(true);
 
   useState(() => {
-    // Select some random pokemon
-    // Query the data, format, and push to shopPokemon for each selected pokemon
+    // Select random stock amount
+    const minStock = 30;
+    const maxStock = 100;
+    const inStock =
+      Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
+
+    // Create randomized array of pokemon
+    // For inStock amount of times pop a pokemon and process it
     // After they are loaded set loading to false
-  });
+  }, []);
 
   return { shopPokemon, error, loading };
 };
