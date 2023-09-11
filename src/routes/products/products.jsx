@@ -5,13 +5,13 @@ import useFetchPokemon from "../../hooks/useFetchPokemon";
 import styles from "./products.module.css";
 
 const Products = () => {
-  const [generation, setGeneration] = useState(1);
+  const [region, setRegion] = useState("kanto");
   // Fetch pokemon data for given generation
   const {
     pokemon,
     loading: pokemonLoading,
     error: pokemonError,
-  } = useFetchPokemon(generation);
+  } = useFetchPokemon(region);
 
   // Prepare pokemon data
 
