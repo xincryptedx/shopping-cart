@@ -31,7 +31,7 @@ const useFetchPokemon = (region = "kanto") => {
         }
         return response.json();
       })
-      .then((response) => setPokemon([{ ...response.pokemon_entries }]))
+      .then((response) => setPokemon([...response.pokemon_entries]))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, [validatedRegion, region]);
