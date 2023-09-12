@@ -1,7 +1,8 @@
 import styles from "./ProductCard.module.css";
 import pokedollar from "../../assets/pokedollarIcon.svg";
+import PropTypes from "prop-types";
 
-const ProductCard = () => {
+const ProductCard = ({ pokemonData }) => {
   return (
     <div className={styles.ProductCard}>
       <img src="" alt="" className={styles.image} />
@@ -14,6 +15,10 @@ const ProductCard = () => {
       />
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  pokemonData: PropTypes.object,
 };
 
 export default ProductCard;
