@@ -43,8 +43,8 @@ const useFetchPokemon = (region = "kanto") => {
 
     const getPokemonDetails = async (pokedexData) => {
       // Select random stock amount
-      const minStock = 2;
-      const maxStock = 5;
+      const minStock = 10;
+      const maxStock = 30;
       const stockNum =
         Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
 
