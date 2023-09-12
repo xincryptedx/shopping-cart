@@ -3,10 +3,16 @@ import pokedollar from "../../assets/pokedollarIcon.svg";
 import PropTypes from "prop-types";
 
 const ProductCard = ({ pokemonData }) => {
+  const capName = pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1);
+
   return (
     <div className={styles.ProductCard}>
-      <img src="" alt="" className={styles.image} />
-      <p className={styles.name}>Crabominable</p>
+      <img
+        src={pokemonData.sprites.front_default}
+        alt={pokemonData.name}
+        className={styles.image}
+      />
+      <p className={styles.name}>{capName}</p>
       <p className={styles.price}>1,000</p>
       <img
         src={pokedollar}
