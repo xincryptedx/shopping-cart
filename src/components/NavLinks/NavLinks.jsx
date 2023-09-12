@@ -15,20 +15,22 @@ const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
   useSetFocusOnStateChange(firstLink.current, navLinksOpen, true);
 
   return (
-    <aside
+    <section
       className={
         className ? className + " " + styles.NavLinks : styles.NavLinks
       }
     >
       <img
         src={cancelIcon}
-        alt="cancel button"
+        alt="close"
+        role="button"
         className={styles.cancelBtn}
         onClick={() => setNavLinksOpen(false)}
       />
       <ul>
         <Link
           to="products"
+          aria-label="prize counter"
           className={styles.productsBtn}
           ref={firstLink}
           onFocus={() => setNavLinksOpen(true)}
@@ -37,7 +39,7 @@ const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
           Prize Counter
         </Link>
       </ul>
-    </aside>
+    </section>
   );
 };
 
