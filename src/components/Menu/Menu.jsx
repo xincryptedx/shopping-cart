@@ -16,6 +16,7 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
 
   return (
     <section
+      role="menu"
       className={
         className ? className + " " + styles.NavLinks : styles.NavLinks
       }
