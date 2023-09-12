@@ -44,7 +44,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
     <nav className={styles.NavBar}>
       <img
         src={menuIcon}
-        alt="menu"
+        alt="open menu"
         role="button"
         tabIndex="0"
         className={styles.menuBtn}
