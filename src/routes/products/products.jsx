@@ -31,12 +31,14 @@ const Products = () => {
   }
 
   // If all data loaded show deck with cards for each prepared pokemon
-  return (
-    <div className={styles.productsRoute}>
-      <SortAndFilter />
-      <ProductDeck pokemon={pokemon} />
-    </div>
-  );
+  if (!pokemonError && !pokemonLoading) {
+    return (
+      <div className={styles.productsRoute}>
+        <SortAndFilter />
+        <ProductDeck pokemon={pokemon} />
+      </div>
+    );
+  }
 };
 
 export default Products;
