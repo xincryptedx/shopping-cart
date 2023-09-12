@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import styles from "./MainLayout.module.css";
 import { useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
-import NavLinks from "../components/NavLinks/NavLinks";
+import Menu from "../components/Menu/Menu";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 
 const MainLayout = () => {
@@ -16,7 +16,7 @@ const MainLayout = () => {
         setNavLinksOpen={setNavLinksOpen}
         setShoppingCartOpen={setShoppingCartOpen}
       />
-      <NavLinks
+      <Menu
         className={
           navLinksOpen
             ? styles.NavLinksOpen + " " + styles.NavLinks

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import styles from "./NavLinks.module.css";
+import styles from "./Menu.module.css";
 import PropTypes from "prop-types";
 import cancelIcon from "../../assets/cancel.svg";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
 import { useRef } from "react";
 import useSetFocusOnStateChange from "../../hooks/useSetFocusOnStateChange";
 
-const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
+const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
   // Close NavLinks on escape key
   useSetStateOnKeydown("Escape", navLinksOpen, setNavLinksOpen, false);
 
@@ -43,10 +43,10 @@ const NavLinks = ({ className, navLinksOpen, setNavLinksOpen }) => {
   );
 };
 
-NavLinks.propTypes = {
+Menu.propTypes = {
   className: PropTypes.string,
   navLinksOpen: PropTypes.bool.isRequired,
   setNavLinksOpen: PropTypes.func.isRequired,
 };
 
-export default NavLinks;
+export default Menu;
