@@ -83,14 +83,18 @@ const useFetchPokemon = (region = "kanto") => {
       );
 
       setPokemon(filteredPokemonData);
+      setLoading(false);
     };
 
     getPokedexData(validatedRegion)
       .then((response) => getPokemonDetails(response))
-      .finally(setLoading(false));
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
   }, [validatedRegion, region]);
 
-  return { shopPokemon: pokemon, error, loading };
+  return { pokemon, error, loading };
 };
 
 export default useFetchPokemon;
