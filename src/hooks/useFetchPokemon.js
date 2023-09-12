@@ -60,9 +60,12 @@ const useFetchPokemon = (region = "kanto") => {
       // Async fetch details for all chosenPokemon
       const promises = chosenPokemon.map(async (entry) => {
         try {
-          const response = await fetch(entry.pokemon_species.url, {
-            mode: "cors",
-          });
+          const response = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/${entry.pokemon_species.name}`,
+            {
+              mode: "cors",
+            }
+          );
           if (response.status >= 400) {
             throw new Error("pokemon fetch error");
           }
