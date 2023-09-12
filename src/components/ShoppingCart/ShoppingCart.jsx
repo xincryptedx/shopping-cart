@@ -10,6 +10,7 @@ const ShoppingCart = ({ className, shoppingCartOpen, setShoppingCartOpen }) => {
   return (
     <section
       role="dialog"
+      aria-labelledby="title"
       className={
         className ? className + " " + styles.ShoppingCart : styles.ShoppingCart
       }
@@ -21,7 +22,7 @@ const ShoppingCart = ({ className, shoppingCartOpen, setShoppingCartOpen }) => {
         className={styles.cancelBtn}
         onClick={() => setShoppingCartOpen(false)}
       />
-      <div>This is a shopping cart div!</div>
+      <h1 id="title">Cart</h1>
     </section>
   );
 };
