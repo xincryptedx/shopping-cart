@@ -23,7 +23,7 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
     >
       <img
         src={cancelIcon}
-        alt="close"
+        alt="close menu"
         role="button"
         className={styles.cancelBtn}
         onClick={() => setNavLinksOpen(false)}
