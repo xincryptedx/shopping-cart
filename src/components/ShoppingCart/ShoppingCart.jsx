@@ -15,7 +15,8 @@ const ShoppingCart = ({ className, shoppingCartOpen, setShoppingCartOpen }) => {
     >
       <img
         src={cancelIcon}
-        alt="cancel button"
+        alt="close"
+        role="button"
         className={styles.cancelBtn}
         onClick={() => setShoppingCartOpen(false)}
       />
