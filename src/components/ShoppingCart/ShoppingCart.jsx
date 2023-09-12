@@ -8,20 +8,21 @@ const ShoppingCart = ({ className, shoppingCartOpen, setShoppingCartOpen }) => {
   useSetStateOnKeydown("Escape", shoppingCartOpen, setShoppingCartOpen, false);
 
   return (
-    <aside
+    <section
+      role="dialog"
       className={
         className ? className + " " + styles.ShoppingCart : styles.ShoppingCart
       }
     >
       <img
         src={cancelIcon}
-        alt="close"
+        alt="close cart"
         role="button"
         className={styles.cancelBtn}
         onClick={() => setShoppingCartOpen(false)}
       />
       <div>This is a shopping cart div!</div>
-    </aside>
+    </section>
   );
 };
 
