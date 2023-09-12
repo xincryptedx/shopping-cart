@@ -28,7 +28,7 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
         className={styles.cancelBtn}
         onClick={() => setNavLinksOpen(false)}
       />
-      <ul>
+      <ul aria-label="links">
         <Link
           to="products"
           aria-label="prize counter"
