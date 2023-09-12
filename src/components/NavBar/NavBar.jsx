@@ -44,22 +44,24 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
     <nav className={styles.NavBar}>
       <img
         src={menuIcon}
-        alt="links menu button"
-        className={styles.menuBtn}
+        alt="menu"
+        role="button"
         tabIndex="0"
+        className={styles.menuBtn}
         onClick={toggleNavLinksOpen}
         onKeyDown={handleKeyDownMenuIcon}
       />
 
       <Link to="/" className={styles.homeBtn} onKeyDown={handleKeyDownHomeIcon}>
-        <img src={logoSmall} alt="Rocket Game Corner home button" />
+        <img src={logoSmall} alt="home" />
       </Link>
 
       <img
         src={cartIcon}
-        alt="cart icon button"
-        className={styles.cartBtn}
+        alt="cart"
+        role="button"
         tabIndex="0"
+        className={styles.cartBtn}
         onClick={toggleShoppingCartOpen}
         onKeyDown={handleKeyDownShoppingCartIcon}
       />
