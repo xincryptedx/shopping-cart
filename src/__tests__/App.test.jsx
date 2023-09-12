@@ -1,9 +1,10 @@
-describe("something truthy and falsy", () => {
-  it("is true when true", () => {
-    expect(true).toBe(true);
-  });
+import { render, screen } from "@testing-library/react";
+import App from "../App";
 
-  it("is false when false", () => {
-    expect(false).toBe(false);
+describe("App", () => {
+  it("renders", () => {
+    render(<App />);
+
+    screen.debug();
   });
 });
