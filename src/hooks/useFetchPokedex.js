@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import shuffleArray from "../utilities/fisherShuffle";
 
-const useFetchPokemon = (region = "kanto") => {
+const useFetchPokedex = (region = "kanto") => {
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -97,4 +97,4 @@ const useFetchPokemon = (region = "kanto") => {
   return { pokemon, error, loading };
 };
 
-export default useFetchPokemon;
+export default useFetchPokedex;

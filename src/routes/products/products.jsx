@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProductDeck from "../../components/ProductDeck/ProductDeck";
 import SortAndFilter from "../../components/SortAndFilter/SortAndFilter";
-import useFetchPokemon from "../../hooks/useFetchPokemon";
+import useFetchPokedex from "../../hooks/useFetchPokedex";
 import styles from "./products.module.css";
 
 const Products = () => {
@@ -11,7 +11,7 @@ const Products = () => {
     pokemon,
     loading: pokemonLoading,
     error: pokemonError,
-  } = useFetchPokemon(region);
+  } = useFetchPokedex(region);
 
   // If loading show dummy deck
   if (pokemonLoading) {
