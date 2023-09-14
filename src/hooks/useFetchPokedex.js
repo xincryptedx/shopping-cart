@@ -40,10 +40,13 @@ const useFetchPokedex = (region = "kanto") => {
       }
     };
 
-    getPokedexData(validatedRegion).catch((error) => {
-      setError(error);
-      setLoading(false);
-    });
+    getPokedexData(validatedRegion)
+      .then((response) => setPokedex(response))
+      .then(setLoading(false))
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
   }, [validatedRegion, region]);
 
   return { pokedex, error, loading };
