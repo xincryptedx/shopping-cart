@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useFetchPokedex = (region = "kanto") => {
-  const [pokemon, setPokemon] = useState(null);
+  const [pokedex, setPokedex] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -46,7 +46,7 @@ const useFetchPokedex = (region = "kanto") => {
     });
   }, [validatedRegion, region]);
 
-  return { pokemon, error, loading };
+  return { pokedex, error, loading };
 };
 
 export default useFetchPokedex;
