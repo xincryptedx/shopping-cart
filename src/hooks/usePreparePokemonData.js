@@ -8,6 +8,16 @@ const usePreparePokemonData = (pokedexData) => {
 
   useEffect(() => {
     const getPokemonDetails = async (pokedexData) => {
+      // Do not run if pokedex data null
+      if (
+        pokedexData === null ||
+        !Array.isArray(pokedexData) ||
+        pokedexData.length === 0
+      ) {
+        setPokemonData([]);
+        setLoading(false);
+      }
+
       // Select random stock amount
       const minStock = 10;
       const maxStock = 30;
@@ -15,6 +25,7 @@ const usePreparePokemonData = (pokedexData) => {
         Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
 
       // Create randomized array of pokemon
+      console.log("Pokedex Data", pokedexData.pokemon_entries);
       const shuffledPokedexData = shuffleArray(pokedexData.pokemon_entries);
       const chosenPokemon = [];
 
@@ -47,17 +58,15 @@ const usePreparePokemonData = (pokedexData) => {
       const filteredPokemonData = pokemonDetailsData.filter(
         (data) => data !== null
       );
-
-      return filteredPokemonData;
+      console.log(filteredPokemonData);
+      setPokemonData(filteredPokemonData);
+      setLoading(false);
     };
 
-    getPokemonDetails(pokedexData)
-      .then((result) => setPokemonData(result))
-      .then(setLoading(false))
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
+    getPokemonDetails(pokedexData).catch((error) => {
+      setError(error);
+      setLoading(false);
+    });
   }, [pokedexData]);
 
   return { pokemonData, loading, error };
