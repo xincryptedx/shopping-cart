@@ -1,0 +1,90 @@
+.modalBackground {
+  background-color: hsla(0, 0%, 0%, 50%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal {
+  display: grid;
+  justify-items: center;
+  row-gap: 15px;
+
+  height: minmax(100px, min-content);
+  width: 200px;
+
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 100px);
+
+  background-color: var(--secondary_1);
+  border: 2px solid var(--primary_2);
+  border-radius: 5px;
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+
+  padding: 10px;
+}
+
+.modal h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 1px grey);
+  color: var(--font_dark);
+}
+
+.modal p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 1px grey);
+  color: var(--font_light);
+  justify-self: start;
+}
+
+.modal button {
+  color: var(--font_light);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(34, 34, 34);
+  background-color: var(--primary_1);
+  border: 2px solid var(--secondary_2);
+  border-radius: 5px;
+  width: 125px;
+  height: 30px;
+}
+
+.modal button:hover {
+  background-color: var(--primary_2);
+}
+
+.modal button:focus {
+  outline: 2px solid white;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal {
+    height: minmax(200px, min-content);
+    width: 400px;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+  }
+
+  .modal h1 {
+    font-size: 2rem;
+  }
+
+  .modal p {
+    font-size: 1.8rem;
+  }
+
+  .modal button {
+    height: 60px;
+    width: 200px;
+    font-size: 1.5rem;
+  }
+}
