@@ -27,8 +27,8 @@ describe("generatePokemon utility", () => {
     },
   ];
 
-  it("has the correct name property", () => {
-    const testPokemon = generatePokemon(dummyPokemonData);
+  it("has the correct name property", async () => {
+    const testPokemon = await generatePokemon(dummyPokemonData);
     expect(testPokemon[0].name).toBe("bulbasaur");
   });
 
