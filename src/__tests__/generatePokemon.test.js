@@ -33,8 +33,8 @@ describe("generatePokemon utility", () => {
   });
 
   it("has a level int between 1-100 inclusive", () => {
-    const testPokemon = generatePokemon("bidoof");
-    expect(Number.isInteger(testPokemon.level)).toBe(true);
+    const testPokemon = generatePokemon(dummyPokemonData);
+    expect(Number.isInteger(testPokemon[0].level)).toBe(true);
     expect(testPokemon.level).toBeGreaterThanOrEqual(1);
     expect(testPokemon.level).toBeLessThanOrEqual(100);
   });
