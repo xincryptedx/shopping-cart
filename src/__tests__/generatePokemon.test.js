@@ -33,5 +33,8 @@ const dummyInputArray = [
 ];
 
 describe("generatePokemon utility", () => {
-  it("returns objects with the proper names", () => {});
+  it("returns objects with the proper names", () => {
+    const testPokemon = generatePokemon(dummyInputArray);
+    expect(testPokemon[0].name).toBe("bulbasaur");
+  });
 });
