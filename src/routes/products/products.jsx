@@ -44,7 +44,7 @@ const Products = () => {
     return (
       <div className={styles.productsRoute}>
         <SortAndFilter />
-        <ProductDeck pokemon={pokemonData} />
+        <ProductDeck pokemonData={pokemonData} />
       </div>
     );
 };
