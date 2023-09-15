@@ -5,8 +5,8 @@ import { setupServer } from "msw/node";
 import { rest } from "msw";
 
 import {
-  bulbasaurBasicInfo,
-  bulbasaurSpeciesInfo,
+  ivysaurBasicInfo,
+  ivysaurSpeciesInfo,
 } from "./responses/mockPokemonResponses";
 
 export const restHandlers = [
@@ -14,13 +14,13 @@ export const restHandlers = [
   rest.get(
     "https://pokeapi.co/api/v2/pokemon-species/bulbasaur",
     (req, res, ctx) => {
-      return res(ctx.status(200), ctx.json(bulbasaurSpeciesInfo));
+      return res(ctx.status(200), ctx.json(ivysaurSpeciesInfo));
     }
   ),
 
   // Bulbasaur basic info
   rest.get("https://pokeapi.co/api/v2/pokemon/bulbasaur", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(bulbasaurBasicInfo));
+    return res(ctx.status(200), ctx.json(ivysaurBasicInfo));
   }),
 ];
 
