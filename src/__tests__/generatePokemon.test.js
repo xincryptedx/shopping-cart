@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import generatePokemon from "../utilities/generatePokemon";
 
 const dummyInputArray = [
@@ -33,8 +33,13 @@ const dummyInputArray = [
 ];
 
 describe("generatePokemon utility", () => {
-  it("returns objects with the proper names", () => {
-    const testPokemon = generatePokemon(dummyInputArray);
+  it("sets proper names", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
     expect(testPokemon[0].name).toBe("bulbasaur");
+  });
+
+  it("sets image to a string", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
+    expect(testPokemon[0].image).toBeTypeOf("string");
   });
 });
