@@ -39,7 +39,7 @@ const usePreparePokemonData = (pokedexData) => {
       }
 
       // Generate the pokemon data
-      const pokemonData = generatePokemon(chosenPokemon);
+      const pokemonData = await generatePokemon(chosenPokemon);
 
       setPokemonData(pokemonData); // Change to newly returned data
       setLoading(false);
