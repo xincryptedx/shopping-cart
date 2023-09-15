@@ -3,7 +3,7 @@ const generatePokemon = (pokemon) => {
 
   pokemon.forEach((entry) => {
     const newPokemon = {
-      name: entry.name,
+      name: entry.pokemon_species.name,
     };
     generatedPoekmon.push(newPokemon);
   });
