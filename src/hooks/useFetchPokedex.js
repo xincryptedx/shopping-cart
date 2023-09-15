@@ -23,21 +23,16 @@ const useFetchPokedex = (region = "kanto") => {
 
   useEffect(() => {
     const getPokedexData = async (region) => {
-      try {
-        const response = await fetch(
-          `https://pokeapi.co/api/v2/pokedex/${region}`,
-          {
-            mode: "cors",
-          }
-        );
-        if (response.status >= 400) {
-          throw new Error("pokemon fetch error");
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokedex/${region}`,
+        {
+          mode: "cors",
         }
-        return response.json();
-      } catch (error) {
-        setError(error);
-        return null;
+      );
+      if (response.status >= 400) {
+        throw new Error("pokemon fetch error");
       }
+      return response.json();
     };
 
     getPokedexData(validatedRegion)
