@@ -11,12 +11,17 @@ const usePreparePokemonData = (pokedexData) => {
       // Do not run if pokedex data null
       if (
         pokedexData === null ||
-        !Array.isArray(pokedexData) ||
-        pokedexData.length === 0
+        !Array.isArray(pokedexData.pokemon_entries) ||
+        pokedexData.pokemon_entries.length === 0
       ) {
+        console.log("Bad Dex Data:", pokedexData);
         setPokemonData([]);
         setLoading(false);
+        return;
       }
+
+      // Set loading back to true during load
+      setLoading(true);
 
       // Select random stock amount
       const minStock = 10;
