@@ -42,4 +42,12 @@ describe("generatePokemon utility", () => {
     const testPokemon = await generatePokemon(dummyInputArray);
     expect(testPokemon[0].image).toBeTypeOf("string");
   });
+
+  it("sets level to int within 1-100 inclusive", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
+    const { level } = testPokemon[0];
+    expect(Number.isInteger(level)).toBeTruthy();
+    expect(level).toBeGreaterThanOrEqual(1);
+    expect(level).toBeLessThanOrEqual(100);
+  });
 });
