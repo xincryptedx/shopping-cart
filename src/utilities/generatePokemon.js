@@ -17,7 +17,7 @@ const generatePokemon = (pokemon) => {
         const newPokemon = {
           name: entry.pokemon_species.name,
           image: basicInfo.sprites.front_default,
-          level: Math.floor(Math.random() * (minLevel - 100 + 1)) + minLevel,
+          level: Math.floor(Math.random() * (100 - minLevel + 1)) + minLevel,
         };
         return newPokemon;
       }
