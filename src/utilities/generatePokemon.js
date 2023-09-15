@@ -1,14 +1,14 @@
 const generatePokemon = (pokemon) => {
-  const generatedPoekmon = [];
+  const generatedPokemon = [];
 
   pokemon.forEach((entry) => {
     const newPokemon = {
       name: entry.pokemon_species.name,
     };
-    generatedPoekmon.push(newPokemon);
+    generatedPokemon.push(newPokemon);
   });
 
-  return generatedPoekmon;
+  return generatedPokemon;
 };
 
 export default generatePokemon;
