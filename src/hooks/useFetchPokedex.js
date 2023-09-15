@@ -23,6 +23,8 @@ const useFetchPokedex = (region = "kanto") => {
 
   useEffect(() => {
     const getPokedexData = async (region) => {
+      setLoading(true);
+
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokedex/${region}`,
         {
