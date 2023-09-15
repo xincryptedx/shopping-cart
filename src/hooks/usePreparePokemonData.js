@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import shuffleArray from "../utilities/fisherShuffle";
+import generatePokemon from "../utilities/generatePokemon";
 
 const usePreparePokemonData = (pokedexData) => {
   const [pokemonData, setPokemonData] = useState(null);
@@ -37,31 +38,10 @@ const usePreparePokemonData = (pokedexData) => {
         chosenPokemon.push(shuffledPokedexData.pop());
       }
 
-      // Async fetch details for all chosenPokemon
-      const promises = chosenPokemon.map(async (entry) => {
-        try {
-          const response = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/${entry.pokemon_species.name}`,
-            {
-              mode: "cors",
-            }
-          );
-          if (response.status >= 400) {
-            throw new Error("pokemon fetch error");
-          }
-          return response.json();
-        } catch (error) {
-          setError(error);
-          return null;
-        }
-      });
+      // Generate the pokemon data
+      const pokemonData = generatePokemon(chosenPokemon);
 
-      const pokemonDetailsData = await Promise.all(promises);
-
-      const filteredPokemonData = pokemonDetailsData.filter(
-        (data) => data !== null
-      );
-      setPokemonData(filteredPokemonData);
+      setPokemonData(pokemonData); // Change to newly returned data
       setLoading(false);
     };
 
