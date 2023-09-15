@@ -8,7 +8,7 @@ const ProductCard = ({ pokemonData }) => {
   return (
     <div className={styles.ProductCard}>
       <img
-        src={pokemonData.sprites.front_default}
+        src={pokemonData.image}
         alt={pokemonData.name}
         className={styles.image}
       />
