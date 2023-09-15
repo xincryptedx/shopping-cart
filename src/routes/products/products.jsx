@@ -21,7 +21,7 @@ const Products = () => {
   } = usePreparePokemonData(pokedex);
 
   // If loading show dummy deck
-  if (pokedexLoading) {
+  if (pokedexLoading || pokemonLoading) {
     return <p>Loading...</p>;
   }
 
