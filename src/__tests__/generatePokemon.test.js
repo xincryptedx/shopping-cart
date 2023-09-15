@@ -38,6 +38,11 @@ describe("generatePokemon utility", () => {
     expect(testPokemon[0].name).toBe("bulbasaur");
   });
 
+  it("sets id to proper value", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
+    expect(testPokemon[0].id).toBe(1);
+  });
+
   it("sets image to a string", async () => {
     const testPokemon = await generatePokemon(dummyInputArray);
     expect(testPokemon[0].image).toBeTypeOf("string");
