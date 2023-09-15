@@ -50,4 +50,9 @@ describe("generatePokemon utility", () => {
     expect(level).toBeGreaterThanOrEqual(1);
     expect(level).toBeLessThanOrEqual(100);
   });
+
+  it("sets level to min of 25 when pokemon is evolved", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
+    expect(testPokemon[1].level).toBeGreaterThanOrEqual(25);
+  });
 });
