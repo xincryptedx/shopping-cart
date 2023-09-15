@@ -14,7 +14,6 @@ const usePreparePokemonData = (pokedexData) => {
         !Array.isArray(pokedexData.pokemon_entries) ||
         pokedexData.pokemon_entries.length === 0
       ) {
-        console.log("Bad Dex Data:", pokedexData);
         setPokemonData([]);
         setLoading(false);
         return;
@@ -30,7 +29,6 @@ const usePreparePokemonData = (pokedexData) => {
         Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
 
       // Create randomized array of pokemon
-      console.log("Pokedex Data", pokedexData.pokemon_entries);
       const shuffledPokedexData = shuffleArray(pokedexData.pokemon_entries);
       const chosenPokemon = [];
 
@@ -63,7 +61,6 @@ const usePreparePokemonData = (pokedexData) => {
       const filteredPokemonData = pokemonDetailsData.filter(
         (data) => data !== null
       );
-      console.log(filteredPokemonData);
       setPokemonData(filteredPokemonData);
       setLoading(false);
     };
