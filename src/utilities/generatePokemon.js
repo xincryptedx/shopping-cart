@@ -12,11 +12,12 @@ const generatePokemon = (pokemon) => {
 
     return Promise.all([basicInfoPromise, speciesInfoPromise]).then(
       ([basicInfo, speciesInfo]) => {
+        const minLevel = speciesInfo.evolves_from_species ? 25 : 1;
+
         const newPokemon = {
           name: entry.pokemon_species.name,
           image: basicInfo.sprites.front_default,
-          captureRate: speciesInfo.capture_rate,
-          growthRate: speciesInfo.growth_rate,
+          level: Math.floor(Math.random() * (minLevel - 100 + 1)) + minLevel,
         };
         return newPokemon;
       }
