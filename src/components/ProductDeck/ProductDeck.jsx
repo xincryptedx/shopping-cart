@@ -2,10 +2,10 @@ import ProductCard from "../ProductCard/ProductCard";
 import styles from "./ProductDeck.module.css";
 import PropTypes from "prop-types";
 
-const ProductDeck = ({ pokemon }) => {
+const ProductDeck = ({ pokemonData }) => {
   return (
     <section className={styles.ProductDeck}>
-      {pokemon.map((entry) => {
+      {pokemonData.map((entry) => {
         return <ProductCard pokemonData={entry} key={entry.id} />;
       })}
     </section>
@@ -13,7 +13,7 @@ const ProductDeck = ({ pokemon }) => {
 };
 
 ProductDeck.propTypes = {
-  pokemon: PropTypes.arrayOf(PropTypes.object),
+  pokemonData: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ProductDeck;
