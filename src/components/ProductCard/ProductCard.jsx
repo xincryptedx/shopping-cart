@@ -13,7 +13,7 @@ const ProductCard = ({ pokemonData }) => {
         className={styles.image}
       />
       <p className={styles.name}>{capName}</p>
-      <p className={styles.price}>1,000</p>
+      <p className={styles.price}>{pokemonData.price}</p>
       <img
         src={pokedollar}
         alt="pokedollar sign"
