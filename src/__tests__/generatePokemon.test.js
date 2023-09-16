@@ -60,4 +60,9 @@ describe("generatePokemon utility", () => {
     const testPokemon = await generatePokemon(dummyInputArray);
     expect(testPokemon[1].level).toBeGreaterThanOrEqual(25);
   });
+
+  it("sets gender to male or female if gender_rate >= 1", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
+    expect(testPokemon[0].gender).toMatch(/^(male|female)$/);
+  });
 });
