@@ -42,12 +42,13 @@ const generatePokemon = (pokemon) => {
         const uniqueMod = isLegendary || isMythical ? 5 : 1;
         const evolvedMod = evolved ? 1.5 : 1;
         const captureRateMod = 255 - captureRate;
-        const price =
+        const price = Math.floor(
           (level + captureRateMod + 100) *
-          genderMod *
-          shinyMod *
-          uniqueMod *
-          evolvedMod;
+            genderMod *
+            shinyMod *
+            uniqueMod *
+            evolvedMod
+        );
 
         const newPokemon = {
           name: entry.pokemon_species.name,
