@@ -30,8 +30,10 @@ const generatePokemon = (pokemon) => {
           const roll = Math.random();
           return roll > chance ? "female" : "male";
         };
-
         const gender = genderRate >= 1 ? randomGender(genderRate) : "none";
+
+        const genderPriceMod =
+          gender === "female" ? (8 - genderRate) * 0.1 + 1 : 1;
 
         const newPokemon = {
           name: entry.pokemon_species.name,
