@@ -70,4 +70,10 @@ describe("generatePokemon utility", () => {
     const testPokemon = await generatePokemon(dummyInputArray);
     expect(testPokemon[2].gender).toBe("none");
   });
+
+  it("sets price to a positive integer", async () => {
+    const testPokemon = await generatePokemon(dummyInputArray);
+    expect(Number.isInteger(testPokemon[0].price)).toBeTruthy();
+    expect(testPokemon[0].price).toBeGreaterThan(0);
+  });
 });
