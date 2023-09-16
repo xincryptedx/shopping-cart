@@ -12,28 +12,42 @@ const generatePokemon = (pokemon) => {
 
     return Promise.all([basicInfoPromise, speciesInfoPromise]).then(
       ([basicInfo, speciesInfo]) => {
+        // Destructure from species response
         const {
           capture_rate: captureRate,
           gender_rate: genderRate,
           is_legendary: isLegendary,
           is_mythical: isMythical,
         } = speciesInfo;
-
-        const evolves = speciesInfo.evolves_from_species ? true : false;
-
-        const minLevel = evolves ? 25 : 1;
+        // Is it evolved
+        const evolved = speciesInfo.evolves_from_species ? true : false;
+        // Level
+        const minLevel = evolved ? 25 : 1;
         const level =
           Math.floor(Math.random() * (100 - minLevel + 1)) + minLevel;
-
+        // Gender
         const randomGender = (genderRate) => {
           const chance = genderRate / 8;
           const roll = Math.random();
           return roll > chance ? "female" : "male";
         };
         const gender = genderRate >= 1 ? randomGender(genderRate) : "none";
-
-        const genderPriceMod =
-          gender === "female" ? (8 - genderRate) * 0.1 + 1 : 1;
+        // Shiny
+        const shinyRoll = Math.random();
+        const shinyChance = isLegendary || isMythical ? 0.012 : 0.002;
+        const isShiny = shinyRoll > shinyChance ? true : false;
+        // Price
+        const genderMod = gender === "female" ? (8 - genderRate) * 0.1 + 1 : 1;
+        const shinyMod = isShiny ? 5 : 1;
+        const uniqueMod = isLegendary || isMythical ? 5 : 1;
+        const evolvedMod = evolved ? 1.5 : 1;
+        const captureRateMod = 255 - captureRate;
+        const price =
+          (level + captureRateMod + 100) *
+          genderMod *
+          shinyMod *
+          uniqueMod *
+          evolvedMod;
 
         const newPokemon = {
           name: entry.pokemon_species.name,
@@ -41,6 +55,7 @@ const generatePokemon = (pokemon) => {
           image: basicInfo.sprites.front_default,
           level,
           gender,
+          price,
         };
         return newPokemon;
       }
