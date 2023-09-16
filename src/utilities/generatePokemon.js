@@ -12,13 +12,33 @@ const generatePokemon = (pokemon) => {
 
     return Promise.all([basicInfoPromise, speciesInfoPromise]).then(
       ([basicInfo, speciesInfo]) => {
-        const minLevel = speciesInfo.evolves_from_species ? 25 : 1;
+        const {
+          capture_rate: captureRate,
+          gender_rate: genderRate,
+          is_legendary: isLegendary,
+          is_mythical: isMythical,
+        } = speciesInfo;
+
+        const evolves = speciesInfo.evolves_from_species ? true : false;
+
+        const minLevel = evolves ? 25 : 1;
+        const level =
+          Math.floor(Math.random() * (100 - minLevel + 1)) + minLevel;
+
+        const randomGender = (genderRate) => {
+          const chance = genderRate / 8;
+          const roll = Math.random();
+          return roll > chance ? "female" : "male";
+        };
+
+        const gender = genderRate >= 1 ? randomGender(genderRate) : "none";
 
         const newPokemon = {
           name: entry.pokemon_species.name,
           id: speciesInfo.id,
           image: basicInfo.sprites.front_default,
-          level: Math.floor(Math.random() * (100 - minLevel + 1)) + minLevel,
+          level,
+          gender,
         };
         return newPokemon;
       }
