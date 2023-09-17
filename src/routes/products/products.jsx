@@ -1,11 +1,13 @@
-import PropTypes from "prop-types";
 import ProductDeck from "../../components/ProductDeck/ProductDeck";
 import SortAndFilter from "../../components/SortAndFilter/SortAndFilter";
 import useFetchPokedex from "../../hooks/useFetchPokedex";
 import styles from "./products.module.css";
 import usePreparePokemonData from "../../hooks/usePreparePokemonData";
+import { useOutletContext } from "react-router-dom";
 
-const Products = ({ region, setRegion }) => {
+const Products = () => {
+  const [region, setRegion] = useOutletContext();
+
   // Fetch pokedex data for given region
   const {
     pokedex,
@@ -46,11 +48,6 @@ const Products = ({ region, setRegion }) => {
         <ProductDeck pokemonData={pokemonData} />
       </div>
     );
-};
-
-Products.propTypes = {
-  region: PropTypes.string.isRequired,
-  setRegion: PropTypes.func.isRequired,
 };
 
 export default Products;
