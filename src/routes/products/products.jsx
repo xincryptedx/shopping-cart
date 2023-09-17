@@ -18,7 +18,7 @@ const Products = () => {
     pokedex,
     loading: pokedexLoading,
     error: pokedexError,
-  } = useFetchPokedex(region, stockRefreshTrigger);
+  } = useFetchPokedex(stockRefreshTrigger, region);
   // Process that data into random pokemon selected from it
   const {
     pokemonData,
