@@ -9,12 +9,13 @@ const useDetermineStockRefresh = () => {
     const storedPokemonData = localStorage.getItem("pokemonData");
     const lastUpdateTime = localStorage.getItem("pokemonUpdateTime");
 
-    if (storedPokemonData) {
+    if (storedPokemonData && lastUpdateTime) {
+      const lastTime = new Date(lastUpdateTime);
       const currentTime = new Date();
       const hourTimeout = 60 * 60 * 1000; // 60s 60m 1000ms
 
       // If more than an hour before current time, refresh
-      if (currentTime - lastUpdateTime < hourTimeout) {
+      if (currentTime - lastTime > hourTimeout) {
         setStockRefreshTrigger(true);
       } else {
         setStockRefreshTrigger(false);
