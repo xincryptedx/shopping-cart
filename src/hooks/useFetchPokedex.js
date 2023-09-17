@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetchPokedex = (region = "kanto") => {
+const useFetchPokedex = (stockRefreshTrigger, region = "kanto") => {
   const [pokedex, setPokedex] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -37,6 +37,11 @@ const useFetchPokedex = (region = "kanto") => {
       return response.json();
     };
 
+    if (!stockRefreshTrigger) {
+      setLoading(false);
+      return;
+    }
+
     getPokedexData(validatedRegion)
       .then((response) => setPokedex(response))
       .then(setLoading(false))
@@ -44,7 +49,7 @@ const useFetchPokedex = (region = "kanto") => {
         setError(error);
         setLoading(false);
       });
-  }, [validatedRegion, region]);
+  }, [validatedRegion, region, stockRefreshTrigger]);
 
   return { pokedex, error, loading };
 };
