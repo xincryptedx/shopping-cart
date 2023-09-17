@@ -4,19 +4,21 @@ import useFetchPokedex from "../../hooks/useFetchPokedex";
 import styles from "./products.module.css";
 import usePreparePokemonData from "../../hooks/usePreparePokemonData";
 import { useOutletContext } from "react-router-dom";
+import useDetermineStockRefresh from "../../hooks/useDetermineStockRefresh";
 
 const Products = () => {
   // Get outlet context
   const [region, setRegion] = useOutletContext();
 
   // Check if stock data needs refreshed
+  const stockRefreshTrigger = useDetermineStockRefresh();
 
   // Fetch pokedex data for given region
   const {
     pokedex,
     loading: pokedexLoading,
     error: pokedexError,
-  } = useFetchPokedex(region);
+  } = useFetchPokedex(region, stockRefreshTrigger);
   // Process that data into random pokemon selected from it
   const {
     pokemonData,
