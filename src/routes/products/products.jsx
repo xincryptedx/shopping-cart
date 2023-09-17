@@ -10,8 +10,8 @@ const Products = () => {
   // Get outlet context
   const [region, setRegion] = useOutletContext();
 
-  // Check if stock data needs refreshed
-  const stockRefreshTrigger = useDetermineStockRefresh();
+  // Check if stock data needs refreshed and when next update is
+  const [stockRefreshTrigger, nextUpdate] = useDetermineStockRefresh();
 
   // Fetch pokedex data for given region
   const {
@@ -49,7 +49,7 @@ const Products = () => {
   if (!pokedexLoading && !pokemonLoading)
     return (
       <div className={styles.productsRoute}>
-        <SortAndFilter />
+        <SortAndFilter nextUpdate={nextUpdate} />
         <ProductDeck pokemonData={pokemonData} />
       </div>
     );
