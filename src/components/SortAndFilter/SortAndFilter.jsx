@@ -1,8 +1,9 @@
+import useSetStockTimer from "../../hooks/useSetStockTimer";
 import styles from "./SortAndFilter.module.css";
 import PropTypes from "prop-types";
 
 const SortAndFilter = ({ nextUpdate }) => {
-  const stockTimer = "48:36";
+  const stockTimer = useSetStockTimer(nextUpdate);
 
   return (
     <section className={styles.SortAndFilter}>
