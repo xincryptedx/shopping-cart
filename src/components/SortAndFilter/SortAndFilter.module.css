@@ -7,3 +7,8 @@
   grid-auto-flow: column;
   column-gap: 10px;
 }
+
+.stockTimer {
+  color: var(--text-dark);
+  align-self: center;
+}
