@@ -4,10 +4,15 @@ const useSetStockTimer = (nextUpdate) => {
   const [stockTimer, setStockTimer] = useState(null);
 
   useEffect(() => {
-    setInterval(() => {
+    const timerInterval = setInterval(() => {
       // Compare time and set state
+      console.log("tick");
     }, 1000);
+
+    return () => clearInterval(timerInterval);
   }, []);
+
+  return stockTimer;
 };
 
 export default useSetStockTimer;
