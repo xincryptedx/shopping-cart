@@ -25,7 +25,7 @@ const useDetermineStockRefresh = () => {
     }
   }, []);
 
-  return [stockRefreshTrigger, setStockRefreshTrigger];
+  return stockRefreshTrigger;
 };
 
 export default useDetermineStockRefresh;
