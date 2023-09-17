@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import shuffleArray from "../utilities/fisherShuffle";
 import generatePokemon from "../utilities/generatePokemon";
 
-const usePreparePokemonData = (pokedexData) => {
+const usePreparePokemonData = (stockRefreshTrigger, pokedexData) => {
   const [pokemonData, setPokemonData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -46,6 +46,14 @@ const usePreparePokemonData = (pokedexData) => {
       localStorage.setItem("pokemonUpdateTime", new Date().toString());
       setLoading(false);
     };
+
+    if (!stockRefreshTrigger) {
+      const pokemonStringData = localStorage.getItem("pokemonData");
+      const pokemonData = JSON.parse(pokemonStringData);
+      setPokemonData(pokemonData);
+      setLoading(false);
+      return;
+    }
 
     getPokemonDetails(pokedexData).catch((error) => {
       setError(error);
