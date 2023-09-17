@@ -41,7 +41,8 @@ const usePreparePokemonData = (pokedexData) => {
       // Generate the pokemon data
       const pokemonData = await generatePokemon(chosenPokemon);
 
-      setPokemonData(pokemonData); // Change to newly returned data
+      setPokemonData(pokemonData);
+      localStorage.setItem("pokemonData", JSON.stringify(pokemonData));
       setLoading(false);
     };
 
