@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useDetermineStockRefresh = () => {
   // Default refresh trigger state is false
-  const [refreshStockTrigger, setRefreshStockTrigger] = useState(false);
+  const [stockRefreshTrigger, setStockRefreshTrigger] = useState(false);
 
   useEffect(() => {
     // Check if there is a local storage entry
@@ -15,17 +15,17 @@ const useDetermineStockRefresh = () => {
 
       // If more than an hour before current time, refresh
       if (currentTime - lastUpdateTime < hourTimeout) {
-        setRefreshStockTrigger(true);
+        setStockRefreshTrigger(true);
       } else {
-        setRefreshStockTrigger(false);
+        setStockRefreshTrigger(false);
       } // Data not older than an hour, no refresh
     } else {
       // No local data, refresh
-      setRefreshStockTrigger(true);
+      setStockRefreshTrigger(true);
     }
   }, []);
 
-  return [refreshStockTrigger, setRefreshStockTrigger];
+  return [stockRefreshTrigger, setStockRefreshTrigger];
 };
 
 export default useDetermineStockRefresh;
