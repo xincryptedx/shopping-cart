@@ -1,6 +1,7 @@
 import styles from "./SortAndFilter.module.css";
+import PropTypes from "prop-types";
 
-const SortAndFilter = () => {
+const SortAndFilter = ({ nextUpdate }) => {
   const stockTimer = "48:36";
 
   return (
@@ -10,6 +11,10 @@ const SortAndFilter = () => {
       <button>Filter</button>
     </section>
   );
+};
+
+SortAndFilter.propTypes = {
+  nextUpdate: PropTypes.instanceOf(Date),
 };
 
 export default SortAndFilter;
