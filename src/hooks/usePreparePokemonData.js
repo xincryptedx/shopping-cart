@@ -59,7 +59,7 @@ const usePreparePokemonData = (stockRefreshTrigger, pokedexData) => {
       setError(error);
       setLoading(false);
     });
-  }, [pokedexData]);
+  }, [pokedexData, stockRefreshTrigger]);
 
   return { pokemonData, loading, error };
 };

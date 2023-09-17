@@ -24,7 +24,7 @@ const Products = () => {
     pokemonData,
     loading: pokemonLoading,
     error: pokemonError,
-  } = usePreparePokemonData(pokedex);
+  } = usePreparePokemonData(stockRefreshTrigger, pokedex);
 
   // If loading show dummy deck
   if (pokedexLoading || pokemonLoading) {
