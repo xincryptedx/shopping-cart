@@ -9,6 +9,8 @@ const MainLayout = () => {
   const [navLinksOpen, setNavLinksOpen] = useState(false);
   const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
 
+  const [region, setRegion] = useState("kanto");
+
   return (
     <div className={styles.MainLayout}>
       <NavBar
@@ -37,7 +39,7 @@ const MainLayout = () => {
       />
 
       <main className={styles.routeContainer}>
-        <Outlet />
+        <Outlet region={region} setRegion={setRegion} />
       </main>
     </div>
   );
