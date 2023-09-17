@@ -6,7 +6,10 @@ import usePreparePokemonData from "../../hooks/usePreparePokemonData";
 import { useOutletContext } from "react-router-dom";
 
 const Products = () => {
+  // Get outlet context
   const [region, setRegion] = useOutletContext();
+
+  // Check if stock data needs refreshed
 
   // Fetch pokedex data for given region
   const {
