@@ -39,7 +39,7 @@ const MainLayout = () => {
       />
 
       <main className={styles.routeContainer}>
-        <Outlet region={region} setRegion={setRegion} />
+        <Outlet context={[region, setRegion]} />
       </main>
     </div>
   );
