@@ -43,6 +43,7 @@ const usePreparePokemonData = (pokedexData) => {
 
       setPokemonData(pokemonData);
       localStorage.setItem("pokemonData", JSON.stringify(pokemonData));
+      localStorage.setItem("pokemonUpdateTime", new Date().toString());
       setLoading(false);
     };
 
