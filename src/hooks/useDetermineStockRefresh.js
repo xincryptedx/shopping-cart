@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useDetermineStockRefresh = () => {
   // Default refresh trigger state is false
-  const [stockRefreshTrigger, setStockRefreshTrigger] = useState(true);
+  const [stockRefreshTrigger, setStockRefreshTrigger] = useState(null);
   const [nextUpdate, setNextUpdate] = useState(null);
 
   useEffect(() => {
