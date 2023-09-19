@@ -80,6 +80,8 @@ const generatePokemon = (pokemon) => {
           gender,
           price,
           isShiny,
+          isLegendary,
+          isMythical,
         };
         return newPokemon;
       }
