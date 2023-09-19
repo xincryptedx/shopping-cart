@@ -57,6 +57,7 @@ const generatePokemon = (pokemon) => {
           level,
           gender,
           price,
+          isShiny,
         };
         return newPokemon;
       }
