@@ -1,6 +1,7 @@
 import styles from "./ProductCard.module.css";
 import pokedollar from "../../assets/pokedollarIcon.svg";
 import PropTypes from "prop-types";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 const ProductCard = ({ pokemonData }) => {
   const capName = pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1);
@@ -14,6 +15,8 @@ const ProductCard = ({ pokemonData }) => {
       />
 
       <p className={styles.name}>{capName}</p>
+
+      <AddToCartButton />
 
       <img
         src={pokedollar}
