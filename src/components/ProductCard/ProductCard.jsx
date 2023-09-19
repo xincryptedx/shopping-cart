@@ -16,7 +16,7 @@ const ProductCard = ({ pokemonData }) => {
 
       <p className={styles.name}>{capName}</p>
 
-      <AddToCartButton />
+      <AddToCartButton className={styles.AddToCartButton} />
 
       <img
         src={pokedollar}
