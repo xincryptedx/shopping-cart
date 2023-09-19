@@ -4,6 +4,11 @@ const useSetStockTimer = (nextUpdate) => {
   const [stockTimer, setStockTimer] = useState(null);
 
   useEffect(() => {
+    if (!nextUpdate) {
+      setStockTimer("00:00");
+      return stockTimer;
+    }
+
     const calculateTimeLeft = () => {
       const difference = nextUpdate - new Date();
 
