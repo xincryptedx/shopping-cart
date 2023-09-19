@@ -3,7 +3,7 @@ import shuffleArray from "../utilities/fisherShuffle";
 import generatePokemon from "../utilities/generatePokemon";
 
 const usePreparePokemonData = (stockRefreshTrigger, pokedexData) => {
-  const [pokemonData, setPokemonData] = useState(null);
+  const [pokemonData, setPokemonData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -47,7 +47,7 @@ const usePreparePokemonData = (stockRefreshTrigger, pokedexData) => {
       setLoading(false);
     };
 
-    if (!stockRefreshTrigger) {
+    if (stockRefreshTrigger === false) {
       const pokemonStringData = localStorage.getItem("pokemonData");
       const pokemonData = JSON.parse(pokemonStringData);
       setPokemonData(pokemonData);
