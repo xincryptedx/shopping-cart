@@ -39,16 +39,15 @@ const useFetchPokedex = (stockRefreshTrigger, region = "kanto") => {
 
     if (!stockRefreshTrigger) {
       setLoading(false);
-      return;
+    } else {
+      getPokedexData(validatedRegion)
+        .then((response) => setPokedex(response))
+        .then(setLoading(false))
+        .catch((error) => {
+          setError(error);
+          setLoading(false);
+        });
     }
-
-    getPokedexData(validatedRegion)
-      .then((response) => setPokedex(response))
-      .then(setLoading(false))
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
   }, [validatedRegion, region, stockRefreshTrigger]);
 
   return { pokedex, error, loading };
