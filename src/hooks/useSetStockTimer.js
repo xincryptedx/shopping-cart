@@ -4,11 +4,6 @@ const useSetStockTimer = (nextUpdate) => {
   const [stockTimer, setStockTimer] = useState(null);
 
   useEffect(() => {
-    if (!nextUpdate) {
-      setStockTimer("00:00");
-      return stockTimer;
-    }
-
     const calculateTimeLeft = () => {
       const difference = nextUpdate - new Date();
 
@@ -25,10 +20,16 @@ const useSetStockTimer = (nextUpdate) => {
       return `${formattedMinutes}:${formattedSeconds}`;
     };
 
-    const timerInterval = setInterval(() => {
-      const timeLeft = calculateTimeLeft();
-      setStockTimer(timeLeft);
-    }, 1000);
+    var timerInterval = null;
+
+    if (!nextUpdate) {
+      setStockTimer("00:00");
+    } else {
+      timerInterval = setInterval(() => {
+        const timeLeft = calculateTimeLeft();
+        setStockTimer(timeLeft);
+      }, 1000);
+    }
 
     return () => clearInterval(timerInterval);
   }, [nextUpdate]);
