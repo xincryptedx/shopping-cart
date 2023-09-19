@@ -35,7 +35,7 @@ const generatePokemon = (pokemon) => {
         // Shiny
         const shinyRoll = Math.random();
         const shinyChance = isLegendary || isMythical ? 0.012 : 0.002;
-        const isShiny = shinyRoll > shinyChance ? true : false;
+        const isShiny = shinyRoll < shinyChance ? true : false;
         // Price
         const genderMod = gender === "female" ? (8 - genderRate) * 0.1 + 1 : 1;
         const shinyMod = isShiny ? 5 : 1;
@@ -49,11 +49,33 @@ const generatePokemon = (pokemon) => {
             uniqueMod *
             evolvedMod
         );
+        // Image
+        const determineImage = (isShiny, gender, basicInfo) => {
+          var shiny = basicInfo.sprites.front_shiny;
+          var shinyFemale = basicInfo.sprites.front_shiny_female;
+          var female = basicInfo.sprites.front_female;
+          var defaultImage = basicInfo.sprites.front_default;
+
+          // If is shiny, female, and shinyFemale sprite exists
+          if (isShiny && gender === "female" && shinyFemale) {
+            return shinyFemale;
+          }
+          // If is shiny and shiny sprite exists
+          if (isShiny && shiny) {
+            return shiny;
+          }
+          // If is female and female sprite exists
+          if (gender === "female" && female) {
+            return female;
+          }
+          // Otherwise return the default sprite
+          return defaultImage;
+        };
 
         const newPokemon = {
           name: entry.pokemon_species.name,
           id: speciesInfo.id,
-          image: basicInfo.sprites.front_default,
+          image: determineImage(isShiny, gender, basicInfo),
           level,
           gender,
           price,
