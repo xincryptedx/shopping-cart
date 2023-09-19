@@ -29,7 +29,7 @@ const useDetermineStockRefresh = () => {
       }
     } else {
       setStockRefreshTrigger(true);
-      setNextUpdate(new Date().getTime() + hourTimeout);
+      setNextUpdate(new Date(new Date().getTime() + hourTimeout));
     }
   }, []);
 
