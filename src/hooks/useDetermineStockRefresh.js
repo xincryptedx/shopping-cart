@@ -10,7 +10,7 @@ const useDetermineStockRefresh = () => {
     const storedPokemonData = localStorage.getItem("pokemonData");
     const lastUpdateTime = localStorage.getItem("pokemonUpdateTime");
 
-    const hourTimeout = 60 * 60 * 1000; // 60s 60m 1000ms
+    const hourTimeout = 60 * 60 * 1000; // 60m 60s 1000ms
 
     if (storedPokemonData && lastUpdateTime) {
       const lastTime = new Date(lastUpdateTime);
