@@ -3,7 +3,7 @@ import pokedollar from "../../assets/pokedollarIcon.svg";
 import PropTypes from "prop-types";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
-const ProductCard = ({ pokemonData }) => {
+const ProductCard = ({ pokemonData, cart, setCart }) => {
   const capName = pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1);
 
   return (
@@ -16,7 +16,11 @@ const ProductCard = ({ pokemonData }) => {
 
       <p className={styles.name}>{capName}</p>
 
-      <AddToCartButton className={styles.AddToCartButton} />
+      <AddToCartButton
+        className={styles.AddToCartButton}
+        cart={cart}
+        setCart={setCart}
+      />
 
       <img
         src={pokedollar}
@@ -30,6 +34,8 @@ const ProductCard = ({ pokemonData }) => {
 
 ProductCard.propTypes = {
   pokemonData: PropTypes.object,
+  cart: PropTypes.arrayOf(PropTypes.object),
+  setCart: PropTypes.func,
 };
 
 export default ProductCard;
