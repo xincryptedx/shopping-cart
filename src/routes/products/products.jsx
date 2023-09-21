@@ -8,7 +8,7 @@ import useDetermineStockRefresh from "../../hooks/useDetermineStockRefresh";
 
 const Products = () => {
   // Get outlet context
-  const [region, setRegion] = useOutletContext();
+  const [region, setRegion, cart, setCart] = useOutletContext();
 
   // Check if stock data needs refreshed and when next update is
   const [stockRefreshTrigger, nextUpdate] = useDetermineStockRefresh();
@@ -50,7 +50,7 @@ const Products = () => {
     return (
       <div className={styles.productsRoute}>
         <SortAndFilter nextUpdate={nextUpdate} />
-        <ProductDeck pokemonData={pokemonData} />
+        <ProductDeck pokemonData={pokemonData} setCart={setCart} />
       </div>
     );
 };
