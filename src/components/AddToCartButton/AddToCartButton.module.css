@@ -1,4 +1,15 @@
 .AddToCartButton {
   display: grid;
   grid-auto-flow: column;
+  column-gap: 3px;
+}
+
+.AddToCartButton p {
+  text-wrap: nowrap;
+  align-self: center;
+}
+
+.AddToCartButton button {
+  height: 30px;
+  width: 25px;
 }
