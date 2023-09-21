@@ -5,7 +5,8 @@ import useSyncValues from "../../hooks/useSyncValues";
 import addToCartIcon from "../../assets/addShoppingCartIcon.svg";
 
 const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
-  const [numberInCart, setNumberInCart] = useState(0); // For showing quantity on button
+  const [numberInCart, setNumberInCart] = useState(0);
+  const maxQuantity = 99;
 
   const addToCart = (id) => {
     setCart((previous) => {
@@ -13,7 +14,10 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
 
       if (foundIndex !== -1) {
         const updatedCart = [...previous];
-        updatedCart[foundIndex].quantity += 1;
+        updatedCart[foundIndex].quantity = Math.min(
+          updatedCart[foundIndex].quantity + 1,
+          maxQuantity
+        );
         return updatedCart;
       }
 
