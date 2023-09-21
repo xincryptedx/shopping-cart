@@ -6,27 +6,34 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
   const [numberInCart, setNumberInCart] = useState(0); // For showing quantity on button
 
   const addToCart = (id) => {
-    // Check if cart has an entry for the item yet
-    const foundEntry = cart.find((entry) => entry.id === id);
-    // If it does, increment the quantity prop, else create the entry with qauantity one
-    if (foundEntry) {
-      // Increment quantity property
-    } else {
-      // Create entry with quantity one
-    }
+    setCart((previous) => {
+      const foundIndex = previous.findIndex((entry) => entry.id === id);
+
+      if (foundIndex !== -1) {
+        const updatedCart = [...previous];
+        updatedCart[foundIndex].quantity += 1;
+        return updatedCart;
+      }
+
+      return [...previous, { ...pokemonData, quantity: 1 }];
+    });
   };
 
   const removeFromCart = (id) => {
-    // Check if cart has an entry for the item yet
-    const foundEntry = cart.find((entry) => entry.id === id);
-    // If the entry is found decrement its quantity
-    if (foundEntry) {
-      // Decrement quantity
-    }
-    // If quantity is >= 0 remove the whole cart entry
-    if (foundEntry && foundEntry.quantity >= 0) {
-      // Remove the entry from cart
-    }
+    setCart((previous) => {
+      const foundIndex = previous.findIndex((entry) => entry.id === id);
+
+      if (foundIndex !== -1) {
+        const updatedCart = [...previous];
+        updatedCart[foundIndex].quantity -= 1;
+        if (updatedCart[foundIndex].quantity <= 0) {
+          updatedCart.splice(foundIndex, 1);
+        }
+        return updatedCart;
+      }
+
+      return previous;
+    });
   };
 
   // Custom hook that updates numberInCart
