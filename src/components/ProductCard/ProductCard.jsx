@@ -18,6 +18,7 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
 
       <AddToCartButton
         className={styles.AddToCartButton}
+        pokemonData={pokemonData}
         cart={cart}
         setCart={setCart}
       />
