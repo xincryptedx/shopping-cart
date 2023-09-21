@@ -35,6 +35,8 @@ const MainLayout = () => {
             ? styles.ShoppingCartOpen + " " + styles.ShoppingCart
             : styles.ShoppingCart
         }
+        cart={cart}
+        setCart={setCart}
         shoppingCartOpen={shoppingCartOpen}
         setShoppingCartOpen={setShoppingCartOpen}
       />
