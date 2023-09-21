@@ -50,7 +50,7 @@ const Products = () => {
     return (
       <div className={styles.productsRoute}>
         <SortAndFilter nextUpdate={nextUpdate} />
-        <ProductDeck pokemonData={pokemonData} setCart={setCart} />
+        <ProductDeck pokemonData={pokemonData} cart={cart} setCart={setCart} />
       </div>
     );
 };
