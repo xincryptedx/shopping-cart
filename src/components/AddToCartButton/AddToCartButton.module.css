@@ -7,6 +7,8 @@
 .AddToCartButton p {
   text-wrap: nowrap;
   align-self: center;
+  justify-self: center;
+  width: 33px;
 }
 
 .AddToCartButton button {
