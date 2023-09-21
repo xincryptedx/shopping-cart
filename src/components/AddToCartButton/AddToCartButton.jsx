@@ -58,8 +58,15 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
           : styles.AddToCartButton
       }
     >
-      <button onClick={handleAddClick}>+</button>
-      <button onClick={handleSubtractClick}>-</button>
+      {numberInCart <= 0 ? (
+        <button onClick={handleAddClick}>Add To Cart</button>
+      ) : (
+        <>
+          {" "}
+          <button onClick={handleAddClick}>+</button>
+          <button onClick={handleSubtractClick}>-</button>
+        </>
+      )}
     </div>
   );
 };
