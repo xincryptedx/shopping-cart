@@ -1,7 +1,7 @@
 import styles from "./AddToCartButton.module.css";
 import PropTypes from "prop-types";
 
-const AddToCartButton = ({ className }) => {
+const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
   return (
     <div
       className={
@@ -18,6 +18,9 @@ const AddToCartButton = ({ className }) => {
 
 AddToCartButton.propTypes = {
   className: PropTypes.string,
+  pokemonData: PropTypes.object,
+  cart: PropTypes.arrayOf(PropTypes.object),
+  setCart: PropTypes.func,
 };
 
 export default AddToCartButton;
