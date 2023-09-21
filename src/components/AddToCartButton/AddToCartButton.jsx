@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./AddToCartButton.module.css";
 import PropTypes from "prop-types";
+import useSyncValues from "../../hooks/useSyncValues";
 
 const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
   const [numberInCart, setNumberInCart] = useState(0); // For showing quantity on button
@@ -36,7 +37,10 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     });
   };
 
-  // Custom hook that updates numberInCart
+  useSyncValues(
+    cart.find((entry) => entry.id === pokemonData.id)?.quantity || 0,
+    setNumberInCart
+  );
 
   const handleAddClick = () => {
     addToCart(pokemonData.id);
