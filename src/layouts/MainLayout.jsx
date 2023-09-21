@@ -10,6 +10,7 @@ const MainLayout = () => {
   const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
 
   const [region, setRegion] = useState("kanto");
+  const [cart, setCart] = useState([]);
 
   return (
     <div className={styles.MainLayout}>
@@ -39,7 +40,7 @@ const MainLayout = () => {
       />
 
       <main className={styles.routeContainer}>
-        <Outlet context={[region, setRegion]} />
+        <Outlet context={[region, setRegion, cart, setCart]} />
       </main>
     </div>
   );
