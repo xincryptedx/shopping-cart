@@ -78,9 +78,9 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
         />
       ) : (
         <>
+          <button onClick={handleSubtractClick}>-</button>
           <p> x {numberInCart}</p>
           <button onClick={handleAddClick}>+</button>
-          <button onClick={handleSubtractClick}>-</button>
         </>
       )}
     </div>
