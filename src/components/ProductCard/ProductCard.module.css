@@ -11,11 +11,11 @@
   box-sizing: border-box;
 
   display: grid;
-  grid-template: 115px 1fr 1fr / min-content 1fr min-content;
+  grid-template: 115px 1fr 1fr / 1fr min-content min-content;
   grid-template-areas:
     "image image image"
     "name name name"
-    "add pokedollar price";
+    "pokedollar price add";
   place-items: center;
 }
 
