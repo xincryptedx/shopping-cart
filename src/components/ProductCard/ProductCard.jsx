@@ -21,13 +21,23 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
 
       <p className={styles.level}>Lv. {pokemonData.level}</p>
 
-      {pokemonData.gender === "male" ? (
-        <img src={maleIcon} alt="male"></img>
-      ) : pokemonData.gender === "female" ? (
-        <img src={femaleIcon} alt="female"></img>
-      ) : (
-        <img src={agenderIcon} alt="agender"></img>
-      )}
+      <img
+        src={
+          pokemonData.gender === "male"
+            ? maleIcon
+            : pokemonData.gender === "female"
+            ? femaleIcon
+            : agenderIcon
+        }
+        alt={
+          pokemonData.gender === "male"
+            ? "male"
+            : pokemonData.gender === "female"
+            ? "female"
+            : "agender"
+        }
+        className={styles.gender}
+      ></img>
 
       <img
         src={pokedollar}
