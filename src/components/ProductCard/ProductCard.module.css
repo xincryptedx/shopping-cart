@@ -12,12 +12,12 @@
   padding-bottom: 5px;
 
   display: grid;
-  grid-template: min-content 115px min-content min-content/ min-content 1fr min-content;
+  grid-template: min-content 115px min-content min-content/ min-content min-content 1fr min-content;
   grid-template-areas:
-    "name name name"
-    "image image image"
-    "level level gender"
-    "pokedollar price add";
+    "name name name name"
+    "image image image image"
+    "level gender pokedollar price"
+    "add add add add";
   place-items: center;
   row-gap: 5px;
 }
