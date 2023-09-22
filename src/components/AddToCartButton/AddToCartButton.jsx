@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./AddToCartButton.module.css";
 import PropTypes from "prop-types";
 import useSyncValues from "../../hooks/useSyncValues";
-import addToCartIcon from "../../assets/addShoppingCartIcon.svg";
 
 const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
   const [numberInCart, setNumberInCart] = useState(0);
@@ -55,14 +54,6 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     removeFromCart(pokemonData.id);
   };
 
-  const handleKeyDownAddToCart = (event) => {
-    const { key } = event;
-    if (key === "Enter" || key === " ") {
-      event.preventDefault();
-      event.target.click();
-    }
-  };
-
   return (
     <div
       className={
@@ -72,14 +63,9 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
       }
     >
       {numberInCart <= 0 ? (
-        <img
-          src={addToCartIcon}
-          alt="add to cart"
-          onClick={handleAddClick}
-          role="button"
-          tabIndex={0}
-          onKeyDown={handleKeyDownAddToCart}
-        />
+        <button onClick={handleAddClick} className={styles.initialButton}>
+          Add to Cart
+        </button>
       ) : (
         <>
           <button onClick={handleSubtractClick}>-</button>
