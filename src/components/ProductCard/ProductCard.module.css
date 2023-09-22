@@ -52,7 +52,7 @@
 
 .AddToCartButton {
   grid-area: add;
-  padding-right: 5px;
+  margin-right: 5px;
 }
 
 .price {
