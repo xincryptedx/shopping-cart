@@ -42,13 +42,15 @@ const generatePokemon = (pokemon) => {
         const uniqueMod = isLegendary || isMythical ? 5 : 1;
         const evolvedMod = evolved ? 1.5 : 1;
         const captureRateMod = 255 - captureRate;
-        const price = Math.floor(
+        const rawPrice = Math.floor(
           (level + captureRateMod + 100) *
             genderMod *
             shinyMod *
             uniqueMod *
             evolvedMod
         );
+        const maxPrice = 9999;
+        const price = Math.min(rawPrice, maxPrice);
         // Image
         const determineImage = (isShiny, gender, basicInfo) => {
           var shiny = basicInfo.sprites.front_shiny;
