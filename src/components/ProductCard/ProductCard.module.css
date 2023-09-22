@@ -10,11 +10,12 @@
   box-sizing: border-box;
 
   display: grid;
-  grid-template: min-content 115px min-content min-content/ min-content 1fr min-content;
+  grid-template: min-content 115px min-content 10px min-content/ min-content 1fr min-content;
   grid-template-areas:
     "name name name"
     "image image image"
     "level level gender"
+    ". . ."
     "pokedollar price add";
   place-items: center;
 }
@@ -42,8 +43,10 @@
 
 .gender {
   grid-area: gender;
-  font-size: 1.6rem;
-  font-weight: bold;
+  justify-self: end;
+  height: 15px;
+  width: 15px;
+  padding-right: 5px;
 }
 
 .AddToCartButton {
