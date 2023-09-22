@@ -4,19 +4,24 @@
   column-gap: 3px;
 }
 
-.AddToCartButton p {
+.AddToCartButton .initialButton {
+  height: 40px;
+  width: 80px;
+  font-size: 0.8rem;
+  text-wrap: nowrap;
+  padding: 0;
+  margin: 0;
+}
+
+.AddToCartButton .quantity {
   text-wrap: nowrap;
   align-self: center;
   justify-self: center;
-  width: 33px;
+  width: 30px;
 }
 
-.AddToCartButton button {
+.AddToCartButton .addButton,
+.AddToCartButton .subtractButton {
   height: 40px;
   width: 25px;
-}
-
-.AddToCartButton img {
-  height: 40px;
-  width: 40px;
 }
