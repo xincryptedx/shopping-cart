@@ -1,7 +1,7 @@
 .AddToCartButton {
   display: grid;
   grid-auto-flow: column;
-  column-gap: 3px;
+  column-gap: 1px;
   background-color: var(--trinary-1);
   border: 2px solid var(--bg-dark-1);
   border-radius: 5px;
@@ -9,7 +9,7 @@
 
 .AddToCartButton .initialButton {
   height: 40px;
-  width: 86px;
+  width: 82px;
   font-size: 0.85rem;
   font-weight: bold;
   text-wrap: nowrap;
