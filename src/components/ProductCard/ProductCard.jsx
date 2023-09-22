@@ -21,7 +21,7 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
           ? "♂"
           : pokemonData.gender === "female"
           ? "♀"
-          : "Ø"}
+          : ""}
       </p>
 
       <img
