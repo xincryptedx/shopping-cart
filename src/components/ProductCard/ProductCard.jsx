@@ -16,7 +16,9 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
 
       <p className={styles.name}>{capName}</p>
 
-      <p>
+      <p className={styles.level}>Lv. {pokemonData.level}</p>
+
+      <p className={styles.gender}>
         {pokemonData.gender === "male"
           ? "♂"
           : pokemonData.gender === "female"
