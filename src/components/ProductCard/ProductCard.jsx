@@ -16,12 +16,13 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
 
       <p className={styles.name}>{capName}</p>
 
-      <AddToCartButton
-        className={styles.AddToCartButton}
-        pokemonData={pokemonData}
-        cart={cart}
-        setCart={setCart}
-      />
+      <p>
+        {pokemonData.gender === "male"
+          ? "♂"
+          : pokemonData.gender === "female"
+          ? "♀"
+          : "Ø"}
+      </p>
 
       <img
         src={pokedollar}
@@ -29,6 +30,13 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
         className={styles.pokedollar}
       />
       <p className={styles.price}>{pokemonData.price}</p>
+
+      <AddToCartButton
+        className={styles.AddToCartButton}
+        pokemonData={pokemonData}
+        cart={cart}
+        setCart={setCart}
+      />
     </div>
   );
 };
