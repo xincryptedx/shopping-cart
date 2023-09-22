@@ -57,7 +57,6 @@
 
 .price {
   grid-area: price;
-  padding-right: 5px;
   justify-self: start;
 }
 
