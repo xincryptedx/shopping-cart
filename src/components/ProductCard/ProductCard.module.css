@@ -8,7 +8,8 @@
   box-shadow: 2px 2px 5px black;
   border: 3px solid var(--bg-light-2);
   box-sizing: border-box;
-  padding: 8px 0px;
+  padding-top: 8px;
+  padding-bottom: 5px;
 
   display: grid;
   grid-template: min-content 115px min-content min-content/ min-content 1fr min-content;
@@ -51,6 +52,7 @@
 
 .AddToCartButton {
   grid-area: add;
+  padding-right: 5px;
 }
 
 .price {
