@@ -10,10 +10,10 @@
   box-sizing: border-box;
 
   display: grid;
-  grid-template: 115px min-content min-content min-content/ min-content 1fr min-content;
+  grid-template: min-content 115px min-content min-content/ min-content 1fr min-content;
   grid-template-areas:
-    "image image image"
     "name name name"
+    "image image image"
     "level level gender"
     "pokedollar price add";
   place-items: center;
@@ -26,6 +26,7 @@
 .name {
   grid-area: name;
   font-size: 1.2rem;
+  padding-top: 5px;
 }
 
 .level {
