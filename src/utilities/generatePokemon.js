@@ -29,9 +29,9 @@ const generatePokemon = (pokemon) => {
         const randomGender = (genderRate) => {
           const chance = genderRate / 8;
           const roll = Math.random();
-          return roll > chance ? "female" : "male";
+          return roll < chance ? "female" : "male";
         };
-        const gender = genderRate >= 1 ? randomGender(genderRate) : "none";
+        const gender = genderRate >= 0 ? randomGender(genderRate) : "none";
         // Shiny
         const shinyRoll = Math.random();
         const shinyChance = isLegendary || isMythical ? 0.012 : 0.002;
