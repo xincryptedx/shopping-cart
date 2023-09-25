@@ -65,21 +65,23 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     }
   };
 
-  const handleInputKeydown = (event) => {
+  const onInputKeydown = (event) => {
     const { key } = event;
+
     if (key === "Enter") {
-      // Set the relevant state for quantity
+      event.preventDefault();
+      // Set state for quantity
     }
-    if (key === "escape") {
+    if (key === "Escape") {
       setInputOpen(false);
     }
   };
 
   const onInputValueChange = (event) => {
-    setInputValue(() => {
+    setInputValue((previous) => {
       const { value: newValue } = event.target;
 
-      if (newValue.length > 2) return;
+      if (newValue.length > 2) return previous;
 
       const replacedValue = newValue.replace(/\D/g, "");
       const clampedValue = Math.max(
@@ -88,22 +90,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
       );
       const finalValue = isNaN(clampedValue) ? "" : clampedValue;
 
-      setInputValue(finalValue);
-
-      /*
-    const { value } = event.target;
-
-    if (value.length > 2) return;
-
-    const replacedValue = value.replace(/\D/g, "");
-
-    const clampedValue = Math.max(0, Math.min(99, parseInt(replacedValue)));
-
-    const finalValue = isNaN(clampedValue) ? "" : clampedValue;
-
-    updateCartWithQuantity(finalValue);
-    removeInvalidCartEntries();
-      */
+      return finalValue;
     });
   };
 
@@ -128,7 +115,13 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
             -
           </button>
           {inputOpen ? (
-            <input />
+            <input
+              type="text"
+              inputMode="numeric"
+              value={inputValue}
+              onChange={onInputValueChange}
+              onKeyDown={onInputKeydown}
+            />
           ) : (
             <p
               className={styles.quantity}
