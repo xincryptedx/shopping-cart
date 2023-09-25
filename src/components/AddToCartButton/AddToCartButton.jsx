@@ -150,13 +150,14 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
               id="quantity"
               type="text"
               inputMode="numeric"
+              className={styles.quantityInput}
               value={inputValue}
               onChange={onInputValueChange}
               onKeyDown={onInputKeydown}
             />
           ) : (
             <p
-              className={styles.quantity}
+              className={styles.quantityLabel}
               role="button"
               aria-label="show input"
               tabIndex={0}
