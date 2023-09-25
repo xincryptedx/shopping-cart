@@ -75,6 +75,16 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     }
   };
 
+  const onInputValueChange = () => {
+    setInputValue((previous) => {
+      // Limit to 2 chars
+      // Verify as int
+      // Clamp value to new const
+      // Set the quantity state
+      // Close the input with state flag
+    });
+  };
+
   return (
     <div
       className={
