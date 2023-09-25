@@ -18,7 +18,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
       // Entry exists
       if (foundIndex !== -1) {
         const updatedCart = [...previous];
-        if (newQuantity === 0) {
+        if (newQuantity === 0 || newQuantity.trim() === "") {
           updatedCart.splice(foundIndex, 1);
         } else {
           updatedCart[foundIndex].quantity = newQuantity;
