@@ -34,7 +34,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     });
   };
 
-  const addToCart = (id) => {
+  const addOneToCart = (id) => {
     setCart((previous) => {
       const foundIndex = previous.findIndex((entry) => entry.id === id);
 
@@ -51,7 +51,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     });
   };
 
-  const removeFromCart = (id) => {
+  const removeOneFromCart = (id) => {
     setCart((previous) => {
       const foundIndex = previous.findIndex((entry) => entry.id === id);
 
@@ -74,11 +74,11 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
   );
 
   const handleAddClick = () => {
-    addToCart(pokemonData.id);
+    addOneToCart(pokemonData.id);
   };
 
   const handleSubtractClick = () => {
-    removeFromCart(pokemonData.id);
+    removeOneFromCart(pokemonData.id);
   };
 
   const handleLabelKeydown = (event) => {
