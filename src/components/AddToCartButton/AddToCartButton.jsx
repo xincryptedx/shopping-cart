@@ -5,6 +5,9 @@ import useSyncValues from "../../hooks/useSyncValues";
 
 const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
   const [numberInCart, setNumberInCart] = useState(0);
+  const [inputOpen, setInputOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
   const maxQuantity = 99;
 
   const addToCart = (id) => {
