@@ -65,6 +65,16 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     }
   };
 
+  const handleInputKeydown = (event) => {
+    const { key } = event;
+    if (key === "Enter") {
+      // Set the relevant state for quantity
+    }
+    if (key === "escape") {
+      setInputOpen(false);
+    }
+  };
+
   return (
     <div
       className={
