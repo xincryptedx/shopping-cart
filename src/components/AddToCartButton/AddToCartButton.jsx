@@ -73,6 +73,8 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     setNumberInCart
   );
 
+  useSyncValues(numberInCart, setInputValue);
+
   const handleAddClick = () => {
     addOneToCart(pokemonData.id);
   };
@@ -86,13 +88,11 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     if (key === "Enter" || key === " ") {
       event.preventDefault();
       setInputOpen(true);
-      setInputValue(numberInCart.toString());
     }
   };
 
   const onLabelClick = () => {
     setInputOpen(true);
-    setInputValue(numberInCart.toString());
   };
 
   const onInputKeydown = (event) => {
