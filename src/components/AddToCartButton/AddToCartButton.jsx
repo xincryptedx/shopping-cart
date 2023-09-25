@@ -75,13 +75,35 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     }
   };
 
-  const onInputValueChange = () => {
-    setInputValue((previous) => {
-      // Limit to 2 chars
-      // Verify as int
-      // Clamp value to new const
-      // Set the quantity state
-      // Close the input with state flag
+  const onInputValueChange = (event) => {
+    setInputValue(() => {
+      const { value: newValue } = event.target;
+
+      if (newValue.length > 2) return;
+
+      const replacedValue = newValue.replace(/\D/g, "");
+      const clampedValue = Math.max(
+        0,
+        Math.min(maxQuantity, parseInt(replacedValue))
+      );
+      const finalValue = isNaN(clampedValue) ? "" : clampedValue;
+
+      setInputValue(finalValue);
+
+      /*
+    const { value } = event.target;
+
+    if (value.length > 2) return;
+
+    const replacedValue = value.replace(/\D/g, "");
+
+    const clampedValue = Math.max(0, Math.min(99, parseInt(replacedValue)));
+
+    const finalValue = isNaN(clampedValue) ? "" : clampedValue;
+
+    updateCartWithQuantity(finalValue);
+    removeInvalidCartEntries();
+      */
     });
   };
 
