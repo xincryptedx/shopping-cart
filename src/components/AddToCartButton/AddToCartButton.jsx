@@ -57,6 +57,14 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     removeFromCart(pokemonData.id);
   };
 
+  const handleLabelKeydown = (event) => {
+    const { key } = event;
+    if (key === "Enter" || key === " ") {
+      event.preventDefault();
+      setInputOpen(true);
+    }
+  };
+
   return (
     <div
       className={
@@ -80,7 +88,14 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
           {inputOpen ? (
             <input />
           ) : (
-            <p className={styles.quantity}>
+            <p
+              className={styles.quantity}
+              role="button"
+              aria-label="show input"
+              tabIndex={0}
+              onClick={() => setInputOpen(true)}
+              onKeyDown={handleLabelKeydown}
+            >
               x {numberInCart.toString().padStart(2, "0")}
             </p>
           )}
