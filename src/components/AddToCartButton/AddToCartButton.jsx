@@ -18,7 +18,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
       // Entry exists
       if (foundIndex !== -1) {
         const updatedCart = [...previous];
-        if (newQuantity === 0 || newQuantity.trim() === "") {
+        if (newQuantity === 0 || newQuantity.toString().trim() === "") {
           updatedCart.splice(foundIndex, 1);
         } else {
           updatedCart[foundIndex].quantity = newQuantity;
@@ -86,7 +86,13 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     if (key === "Enter" || key === " ") {
       event.preventDefault();
       setInputOpen(true);
+      setInputValue(numberInCart.toString());
     }
+  };
+
+  const onLabelClick = () => {
+    setInputOpen(true);
+    setInputValue(numberInCart.toString());
   };
 
   const onInputKeydown = (event) => {
@@ -154,7 +160,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
               role="button"
               aria-label="show input"
               tabIndex={0}
-              onClick={() => setInputOpen(true)}
+              onClick={onLabelClick}
               onKeyDown={handleLabelKeydown}
             >
               x {numberInCart.toString().padStart(2, "0")}
