@@ -1,13 +1,9 @@
 import { useEffect } from "react";
 
-const useSyncValues = (primaryValue, setSyncedValue, setStateCallback) => {
+const useSyncValues = (primaryValue, setSyncedValue) => {
   useEffect(() => {
-    if (typeof setStateCallback === "function") {
-      setSyncedValue(primaryValue, () => setStateCallback);
-    } else {
-      setSyncedValue(primaryValue);
-    }
-  }, [primaryValue, setSyncedValue, setStateCallback]);
+    setSyncedValue(primaryValue);
+  }, [primaryValue, setSyncedValue]);
 };
 
 export default useSyncValues;
