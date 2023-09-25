@@ -27,6 +27,13 @@
   width: 30px;
 }
 
+.quantityInput {
+  align-self: center;
+  justify-self: center;
+  width: 30px;
+  text-align: center;
+}
+
 .addButton,
 .subtractButton {
   height: 40px;
