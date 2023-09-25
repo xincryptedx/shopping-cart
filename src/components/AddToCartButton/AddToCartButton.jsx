@@ -75,15 +75,15 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
 
   useSyncValues(numberInCart, setInputValue);
 
-  const handleAddClick = () => {
+  const onAddClick = () => {
     addOneToCart(pokemonData.id);
   };
 
-  const handleSubtractClick = () => {
+  const onSubtractClick = () => {
     removeOneFromCart(pokemonData.id);
   };
 
-  const handleLabelKeydown = (event) => {
+  const onLabelKeydown = (event) => {
     const { key } = event;
     if (key === "Enter" || key === " ") {
       event.preventDefault();
@@ -134,15 +134,12 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
       }
     >
       {numberInCart <= 0 ? (
-        <button onClick={handleAddClick} className={styles.initialButton}>
+        <button onClick={onAddClick} className={styles.initialButton}>
           Add to Cart
         </button>
       ) : (
         <>
-          <button
-            onClick={handleSubtractClick}
-            className={styles.subtractButton}
-          >
+          <button onClick={onSubtractClick} className={styles.subtractButton}>
             -
           </button>
           {inputOpen ? (
@@ -163,13 +160,13 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
               aria-label="show input"
               tabIndex={0}
               onClick={onLabelClick}
-              onKeyDown={handleLabelKeydown}
+              onKeyDown={onLabelKeydown}
             >
               x {numberInCart.toString().padStart(2, "0")}
             </p>
           )}
 
-          <button onClick={handleAddClick} className={styles.addButton}>
+          <button onClick={onAddClick} className={styles.addButton}>
             +
           </button>
         </>
