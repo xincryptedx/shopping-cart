@@ -8,7 +8,7 @@
   border-radius: 5px;
 }
 
-.AddToCartButton .initialButton {
+.initialButton {
   grid-column: -1/1;
   height: 40px;
   font-size: 0.85rem;
@@ -20,27 +20,27 @@
   margin: 0;
 }
 
-.AddToCartButton .quantity {
+.quantityLabel {
   text-wrap: nowrap;
   align-self: center;
   justify-self: center;
   width: 30px;
 }
 
-.AddToCartButton .addButton,
-.AddToCartButton .subtractButton {
+.addButton,
+.subtractButton {
   height: 40px;
   border: none;
   font-weight: bold;
   font-size: 1.3rem;
 }
 
-.AddToCartButton .addButton {
+.addButton {
   background-color: var(--primary-1);
   border-left: 2px solid var(--bg-dark-1);
 }
 
-.AddToCartButton .subtractButton {
+.subtractButton {
   background-color: var(--secondary-1);
   border-right: 2px solid var(--bg-dark-1);
 }
