@@ -10,6 +10,30 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
 
   const maxQuantity = 99;
 
+  const updateCartWithQuantity = (newQuantity) => {
+    setCart((previous) => {
+      const foundIndex = previous.findIndex(
+        (entry) => entry.id === pokemonData.id
+      );
+      // Entry exists
+      if (foundIndex !== -1) {
+        const updatedCart = [...previous];
+        if (newQuantity === 0) {
+          updatedCart.splice(foundIndex, 1);
+        } else {
+          updatedCart[foundIndex].quantity = newQuantity;
+        }
+        return updatedCart;
+      }
+      // Entry does not exist
+      if (newQuantity > 0) {
+        return [...previous, { ...pokemonData, quantity: newQuantity }];
+      }
+
+      return previous;
+    });
+  };
+
   const addToCart = (id) => {
     setCart((previous) => {
       const foundIndex = previous.findIndex((entry) => entry.id === id);
@@ -70,7 +94,8 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
 
     if (key === "Enter") {
       event.preventDefault();
-      // Set state for quantity
+      updateCartWithQuantity(inputValue);
+      setInputOpen(false);
     }
     if (key === "Escape") {
       setInputOpen(false);
@@ -116,6 +141,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
           </button>
           {inputOpen ? (
             <input
+              id="quantity"
               type="text"
               inputMode="numeric"
               value={inputValue}
