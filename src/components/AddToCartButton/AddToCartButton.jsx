@@ -129,6 +129,10 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
     event.target.select();
   };
 
+  const onInputBlur = () => {
+    setInputOpen(false);
+  };
+
   return (
     <div
       className={
@@ -156,6 +160,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
               onChange={onInputValueChange}
               onKeyDown={onInputKeydown}
               onFocus={onInputFocus}
+              onBlur={onInputBlur}
               autoFocus
             />
           ) : (
