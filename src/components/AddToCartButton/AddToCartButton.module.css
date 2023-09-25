@@ -32,6 +32,8 @@
   justify-self: center;
   width: 30px;
   text-align: center;
+  font-weight: bold;
+  background-color: var(--bg-light-2);
 }
 
 .addButton,
