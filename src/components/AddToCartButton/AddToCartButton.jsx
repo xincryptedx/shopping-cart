@@ -77,9 +77,14 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
           >
             -
           </button>
-          <p className={styles.quantity}>
-            x {numberInCart.toString().padStart(2, "0")}
-          </p>
+          {inputOpen ? (
+            <input />
+          ) : (
+            <p className={styles.quantity}>
+              x {numberInCart.toString().padStart(2, "0")}
+            </p>
+          )}
+
           <button onClick={handleAddClick} className={styles.addButton}>
             +
           </button>
