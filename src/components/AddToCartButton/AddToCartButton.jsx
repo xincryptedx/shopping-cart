@@ -154,6 +154,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
               value={inputValue}
               onChange={onInputValueChange}
               onKeyDown={onInputKeydown}
+              autoFocus
             />
           ) : (
             <p
