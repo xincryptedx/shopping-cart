@@ -59,6 +59,8 @@ const ShoppingCart = ({
         Total: <img src={pokedollarIcon} alt="pokedollar" />
         {totalCartPrice.toLocaleString()}
       </p>
+      <button className={styles.checkoutButton}>Checkout</button>
+      <p className={styles.checkoutError}>-Service Currently Unavailable-</p>
     </section>
   );
 };
