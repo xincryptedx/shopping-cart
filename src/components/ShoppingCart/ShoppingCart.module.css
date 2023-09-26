@@ -20,7 +20,7 @@
   width: 30px;
   align-self: center;
   justify-self: end;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .title {
@@ -91,8 +91,30 @@
 
 .checkoutButton {
   grid-area: checkout;
+  height: 50px;
+  margin-right: 8px;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  background-color: var(--trinary-1);
+  border: 2px solid var(--bg-dark-2);
+  border-radius: 5px;
+}
+
+.checkoutButton:active {
+  background-color: var(--trinary-2);
 }
 
 .checkoutError {
   grid-area: error;
+  justify-self: center;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--primary-1);
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid red;
+  width: 100px;
 }
