@@ -43,8 +43,8 @@
 
 .cartItem {
   display: grid;
-  grid-template: 1fr / 1fr 20ch 110px 1fr;
-  grid-template-areas: ". name button .";
+  grid-template: 1fr / 1fr 15ch 105px 7ch 1fr;
+  grid-template-areas: ". name button lineTotal .";
 }
 
 .itemName {
