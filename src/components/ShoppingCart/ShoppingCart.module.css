@@ -1,6 +1,34 @@
 .ShoppingCart {
+  display: grid;
+  grid-template: repeat(3, min-content) / 1fr 1fr;
+  grid-template-areas:
+    "cancel title"
+    "items items"
+    "checkout checkout";
+
   background-color: var(--bg-dark-1);
   width: 100vw;
   min-height: 100vh;
   z-index: 10;
+}
+
+.cancelBtn {
+  grid-area: cancel;
+  width: 30px;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.title {
+  grid-area: title;
+  justify-self: center;
+
+  color: var(--bg-light-1);
+}
+
+.cartItemContainer {
+  grid-area: items;
+}
+
+.cartItem {
 }
