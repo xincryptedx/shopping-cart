@@ -66,6 +66,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen, cart }) => {
         className={styles.cartBtn}
         onClick={toggleShoppingCartOpen}
         onKeyDown={handleKeyDownShoppingCartIcon}
+        aria-label={`Shopping Cart: ${totalInCart} items`}
       >
         <img src={cartIcon} alt="cart" />
         {totalInCart > 0 ? (
