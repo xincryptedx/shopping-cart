@@ -46,7 +46,7 @@ const ShoppingCart = ({
               />
               <p className={styles.lineTotal}>
                 <img src={pokedollarIcon} alt="pokedollar" />{" "}
-                {entry.price * entry.quantity}
+                {(entry.price * entry.quantity).toLocaleString()}
               </p>
             </div>
           );
