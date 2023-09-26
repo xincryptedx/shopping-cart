@@ -1,10 +1,12 @@
 .ShoppingCart {
   display: grid;
-  grid-template: min-content min-content min-content / 1fr 1fr;
+  grid-template: min-content min-content min-content min-content / 1fr 1fr;
   grid-template-areas:
     "cancel title"
     "items items"
+    "total total"
     "checkout checkout";
+  row-gap: 10px;
 
   background-color: var(--bg-dark-1);
   width: 100vw;
@@ -65,4 +67,22 @@
 
 .lineTotal img {
   height: 12px;
+}
+
+.cartTotal {
+  grid-area: total;
+  justify-self: end;
+
+  background-color: var(--bg-dark-2);
+  margin-right: 8px;
+  padding: 4px 8px;
+  border-radius: 5px;
+
+  color: var(--text-light);
+  font-size: 1.6rem;
+}
+
+.cartTotal img {
+  height: 0.7em;
+  filter: invert();
 }
