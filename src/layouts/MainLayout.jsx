@@ -18,6 +18,7 @@ const MainLayout = () => {
         navLinksOpen={navLinksOpen}
         setNavLinksOpen={setNavLinksOpen}
         setShoppingCartOpen={setShoppingCartOpen}
+        cart={cart}
       />
       <Menu
         className={
