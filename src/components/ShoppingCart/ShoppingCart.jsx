@@ -33,7 +33,7 @@ const ShoppingCart = ({
       <div className={styles.cartItemContainer}>
         {cart.map((entry) => {
           return (
-            <div key={entry.id}>
+            <div key={entry.id} className={styles.cartItem}>
               <p>{entry.name}</p>
               <AddToCartButton
                 className={styles.addToCartButton}
