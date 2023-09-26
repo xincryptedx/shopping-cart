@@ -65,6 +65,8 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
         onClick={toggleShoppingCartOpen}
         onKeyDown={handleKeyDownShoppingCartIcon}
       />
+
+      <p className={styles.cartQuantity}></p>
     </nav>
   );
 };
