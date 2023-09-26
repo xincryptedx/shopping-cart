@@ -54,6 +54,7 @@ const ShoppingCart = ({
           );
         })}
       </div>
+      <p className={styles.cartTotal}>Total: </p>
     </section>
   );
 };
