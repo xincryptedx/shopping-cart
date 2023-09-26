@@ -23,6 +23,7 @@
   grid-area: title;
   justify-self: center;
 
+  font-size: 2.5rem;
   color: var(--bg-light-1);
 }
 
@@ -31,4 +32,16 @@
 }
 
 .cartItem {
+  display: grid;
+  grid-template: 1fr / 1fr 20ch 60px 1fr;
+  grid-template-areas: ". name button .";
+}
+
+.itemName {
+  grid-area: name;
+  justify-self: start;
+}
+
+.addToCartButton {
+  grid-area: button;
 }
