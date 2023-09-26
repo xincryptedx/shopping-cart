@@ -123,3 +123,15 @@
   border: 1px solid red;
   width: 100px;
 }
+
+.emptyCartMessage {
+  grid-column: -1/1;
+  font-size: 1.5rem;
+  background-color: var(--bg-dark-2);
+  width: 250px;
+  padding: 40px 0;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--text-light);
+  justify-self: center;
+}
