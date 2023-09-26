@@ -33,7 +33,7 @@
   grid-auto-rows: 40px;
   row-gap: 10px;
 
-  max-height: 400px;
+  max-height: 380px;
   overflow-y: auto;
 
   background-color: var(--bg-light-1);
