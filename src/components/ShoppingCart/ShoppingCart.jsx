@@ -1,5 +1,6 @@
 import styles from "./ShoppingCart.module.css";
 import cancelIcon from "../../assets/cancel.svg";
+import pokedollarIcon from "../../assets/pokedollarIcon.svg";
 import PropTypes from "prop-types";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
@@ -43,7 +44,10 @@ const ShoppingCart = ({
                 cart={cart}
                 setCart={setCart}
               />
-              <p className={styles.lineTotal}>{entry.price * entry.quantity}</p>
+              <p className={styles.lineTotal}>
+                <img src={pokedollarIcon} alt="pokedollar" />{" "}
+                {entry.price * entry.quantity}
+              </p>
             </div>
           );
         })}
