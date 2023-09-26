@@ -2,6 +2,7 @@ import styles from "./ShoppingCart.module.css";
 import cancelIcon from "../../assets/cancel.svg";
 import PropTypes from "prop-types";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 const ShoppingCart = ({
   className,
@@ -31,7 +32,17 @@ const ShoppingCart = ({
       <h1 id="title">Cart</h1>
       <div className={styles.cartItemContainer}>
         {cart.map((entry) => {
-          return <p key={entry.id}>{entry.name}</p>;
+          return (
+            <div key={entry.id}>
+              <p>{entry.name}</p>
+              <AddToCartButton
+                className={styles.addToCartButton}
+                pokemonData={entry}
+                cart={cart}
+                setCart={setCart}
+              />
+            </div>
+          );
         })}
       </div>
     </section>
