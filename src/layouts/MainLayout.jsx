@@ -12,7 +12,7 @@ const MainLayout = () => {
 
   const [region, setRegion] = useState("kanto");
   const [cart, setCart] = useState([]);
-  const totalCartPrice = useTotalCartPrice();
+  const totalCartPrice = useTotalCartPrice(cart);
 
   return (
     <div className={styles.MainLayout}>
