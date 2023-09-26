@@ -3,7 +3,13 @@ import cancelIcon from "../../assets/cancel.svg";
 import PropTypes from "prop-types";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
 
-const ShoppingCart = ({ className, shoppingCartOpen, setShoppingCartOpen }) => {
+const ShoppingCart = ({
+  className,
+  shoppingCartOpen,
+  setShoppingCartOpen,
+  cart,
+  setCart,
+}) => {
   // Close ShoppingCart on escape
   useSetStateOnKeydown("Escape", shoppingCartOpen, setShoppingCartOpen, false);
 
@@ -23,6 +29,11 @@ const ShoppingCart = ({ className, shoppingCartOpen, setShoppingCartOpen }) => {
         onClick={() => setShoppingCartOpen(false)}
       />
       <h1 id="title">Cart</h1>
+      <div className={styles.cartItemContainer}>
+        {cart.map((entry) => {
+          return <p key={entry.id}>{entry.name}</p>;
+        })}
+      </div>
     </section>
   );
 };
@@ -31,6 +42,8 @@ ShoppingCart.propTypes = {
   className: PropTypes.string,
   shoppingCartOpen: PropTypes.bool.isRequired,
   setShoppingCartOpen: PropTypes.func.isRequired,
+  cart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setCart: PropTypes.func.isRequired,
 };
 
 export default ShoppingCart;
