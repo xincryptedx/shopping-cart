@@ -37,7 +37,9 @@ const ShoppingCart = ({
         {cart.map((entry) => {
           return (
             <div key={entry.id} className={styles.cartItem}>
-              <p className={styles.itemName}>{entry.name}</p>
+              <p className={styles.itemName}>
+                {entry.name[0].toUpperCase() + entry.name.slice(1)}
+              </p>
               <AddToCartButton
                 className={styles.addToCartButton}
                 pokemonData={entry}
