@@ -60,19 +60,20 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen, cart }) => {
         <img src={logoSmall} alt="home" />
       </Link>
 
-      <img
-        src={cartIcon}
-        alt="cart"
+      <div
         role="button"
         tabIndex="0"
         className={styles.cartBtn}
         onClick={toggleShoppingCartOpen}
         onKeyDown={handleKeyDownShoppingCartIcon}
-      />
-
-      <p className={styles.cartQuantity}>
-        {totalInCart <= maxTotalCount ? totalInCart : `${maxTotalCount}+`}
-      </p>
+      >
+        <img src={cartIcon} alt="cart" />
+        {totalInCart > 0 ? (
+          <p className={styles.cartQuantity}>
+            {totalInCart <= maxTotalCount ? totalInCart : `${maxTotalCount}+`}
+          </p>
+        ) : null}
+      </div>
     </nav>
   );
 };
