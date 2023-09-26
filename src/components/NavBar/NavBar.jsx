@@ -4,8 +4,12 @@ import logoSmall from "../../assets/logoIconSmall.svg";
 import menuIcon from "../../assets/menuIcon.svg";
 import cartIcon from "../../assets/cartIcon.svg";
 import PropTypes from "prop-types";
+import useTotalInCart from "../../hooks/useTotalInCart";
 
-const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
+const NavBar = ({ setNavLinksOpen, setShoppingCartOpen, cart }) => {
+  const totalInCart = useTotalInCart(cart);
+  const maxTotalCount = 99;
+
   const toggleNavLinksOpen = (event) => {
     event.stopPropagation();
     setNavLinksOpen((previous) => !previous);
@@ -66,7 +70,9 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
         onKeyDown={handleKeyDownShoppingCartIcon}
       />
 
-      <p className={styles.cartQuantity}></p>
+      <p className={styles.cartQuantity}>
+        {totalInCart <= maxTotalCount ? totalInCart : `${maxTotalCount}+`}
+      </p>
     </nav>
   );
 };
@@ -74,6 +80,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen }) => {
 NavBar.propTypes = {
   setShoppingCartOpen: PropTypes.func.isRequired,
   setNavLinksOpen: PropTypes.func.isRequired,
+  cart: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default NavBar;
