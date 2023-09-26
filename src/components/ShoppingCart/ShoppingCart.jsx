@@ -11,6 +11,7 @@ const ShoppingCart = ({
   setShoppingCartOpen,
   cart,
   setCart,
+  totalCartPrice,
 }) => {
   // Close ShoppingCart on escape
   useSetStateOnKeydown("Escape", shoppingCartOpen, setShoppingCartOpen, false);
@@ -54,7 +55,10 @@ const ShoppingCart = ({
           );
         })}
       </div>
-      <p className={styles.cartTotal}>Total: </p>
+      <p className={styles.cartTotal}>
+        Total: <img src={pokedollarIcon} alt="pokedollar" />
+        {totalCartPrice.toLocaleString()}
+      </p>
     </section>
   );
 };
@@ -65,6 +69,7 @@ ShoppingCart.propTypes = {
   setShoppingCartOpen: PropTypes.func.isRequired,
   cart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setCart: PropTypes.func.isRequired,
+  totalCartPrice: PropTypes.number.isRequired,
 };
 
 export default ShoppingCart;
