@@ -4,12 +4,14 @@ const useTotalInCart = (cart) => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const newTotal = cart.reduce((accumulator, currentValue) => {
-      const quantity = currentValue?.quantity || 0;
-      return accumulator + quantity;
-    }, 0);
+    if (Array.isArray(cart)) {
+      const newTotal = cart.reduce((accumulator, currentValue) => {
+        const quantity = currentValue?.quantity || 0;
+        return accumulator + quantity;
+      }, 0);
 
-    setTotal(newTotal);
+      setTotal(newTotal);
+    }
   }, [cart]);
 
   return total;
