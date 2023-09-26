@@ -43,7 +43,7 @@
 
 .cartItem {
   display: grid;
-  grid-template: 1fr / 1fr 15ch 105px 7ch 1fr;
+  grid-template: 1fr / 1fr 14ch 105px 8ch 1fr;
   grid-template-areas: ". name button lineTotal .";
 }
 
@@ -55,4 +55,9 @@
 
 .addToCartButton {
   grid-area: button;
+}
+
+.lineTotal {
+  grid-area: lineTotal;
+  justify-self: end;
 }
