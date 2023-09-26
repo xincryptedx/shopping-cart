@@ -4,6 +4,7 @@ import { useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Menu from "../components/Menu/Menu";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
+import useTotalCartPrice from "../hooks/useTotalCartPrice";
 
 const MainLayout = () => {
   const [navLinksOpen, setNavLinksOpen] = useState(false);
@@ -11,6 +12,7 @@ const MainLayout = () => {
 
   const [region, setRegion] = useState("kanto");
   const [cart, setCart] = useState([]);
+  const totalCartPrice = useTotalCartPrice();
 
   return (
     <div className={styles.MainLayout}>
@@ -38,6 +40,7 @@ const MainLayout = () => {
         }
         cart={cart}
         setCart={setCart}
+        totalCartPrice={totalCartPrice}
         shoppingCartOpen={shoppingCartOpen}
         setShoppingCartOpen={setShoppingCartOpen}
       />
