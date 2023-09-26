@@ -1,6 +1,6 @@
 .ShoppingCart {
   display: grid;
-  grid-template: repeat(3, min-content) / 1fr 1fr;
+  grid-template: min-content min-content min-content / 1fr 1fr;
   grid-template-areas:
     "cancel title"
     "items items"
@@ -8,7 +8,7 @@
 
   background-color: var(--bg-dark-1);
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   z-index: 10;
 }
 
@@ -29,17 +29,28 @@
 
 .cartItemContainer {
   grid-area: items;
+  display: grid;
+  grid-auto-rows: 40px;
+  row-gap: 10px;
+
+  max-height: 400px;
+  overflow-y: auto;
+
+  background-color: var(--bg-light-1);
+  padding: 10px 0;
+  margin: 0 8px;
 }
 
 .cartItem {
   display: grid;
-  grid-template: 1fr / 1fr 20ch 60px 1fr;
+  grid-template: 1fr / 1fr 20ch 110px 1fr;
   grid-template-areas: ". name button .";
 }
 
 .itemName {
   grid-area: name;
   justify-self: start;
+  align-self: center;
 }
 
 .addToCartButton {
