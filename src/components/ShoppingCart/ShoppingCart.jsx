@@ -37,7 +37,6 @@ const ShoppingCart = ({
           return (
             <div key={entry.id} className={styles.cartItem}>
               <p className={styles.itemName}>{entry.name}</p>
-              <p className={styles.itemQuantity}>{entry.quantity}</p>
               <AddToCartButton
                 className={styles.addToCartButton}
                 pokemonData={entry}
