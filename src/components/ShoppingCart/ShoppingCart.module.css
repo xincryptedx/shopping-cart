@@ -60,4 +60,9 @@
 .lineTotal {
   grid-area: lineTotal;
   justify-self: end;
+  align-self: center;
+}
+
+.lineTotal img {
+  height: 12px;
 }
