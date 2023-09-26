@@ -43,6 +43,7 @@ const ShoppingCart = ({
                 cart={cart}
                 setCart={setCart}
               />
+              <p className={styles.lineTotal}>{entry.price * entry.quantity}</p>
             </div>
           );
         })}
