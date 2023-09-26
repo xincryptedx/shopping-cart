@@ -29,7 +29,9 @@ const ShoppingCart = ({
         className={styles.cancelBtn}
         onClick={() => setShoppingCartOpen(false)}
       />
-      <h1 id="title">Cart</h1>
+      <h1 id="title" className={styles.title}>
+        Cart
+      </h1>
       <div className={styles.cartItemContainer}>
         {cart.map((entry) => {
           return (
