@@ -3,6 +3,7 @@ import cancelIcon from "../../assets/cancel.svg";
 import pokedollarIcon from "../../assets/pokedollarIcon.svg";
 import PropTypes from "prop-types";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
+import useTotalInCart from "../../hooks/useTotalInCart";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 const ShoppingCart = ({
@@ -15,6 +16,8 @@ const ShoppingCart = ({
 }) => {
   // Close ShoppingCart on escape
   useSetStateOnKeydown("Escape", shoppingCartOpen, setShoppingCartOpen, false);
+
+  const totalInCart = useTotalInCart(cart);
 
   return (
     <section
@@ -34,33 +37,39 @@ const ShoppingCart = ({
       <h1 id="title" className={styles.title}>
         Cart
       </h1>
-      <div className={styles.cartItemContainer}>
-        {cart.map((entry) => {
-          return (
-            <div key={entry.id} className={styles.cartItem}>
-              <p className={styles.itemName}>
-                {entry.name[0].toUpperCase() + entry.name.slice(1)}
-              </p>
-              <AddToCartButton
-                className={styles.addToCartButton}
-                pokemonData={entry}
-                cart={cart}
-                setCart={setCart}
-              />
-              <p className={styles.lineTotal}>
-                <img src={pokedollarIcon} alt="pokedollar" />{" "}
-                {(entry.price * entry.quantity).toLocaleString()}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-      <p className={styles.cartTotal}>
-        Total: <img src={pokedollarIcon} alt="pokedollar" />
-        {totalCartPrice.toLocaleString()}
-      </p>
-      <button className={styles.checkoutButton}>Checkout</button>
-      <p className={styles.checkoutError}>Service Unavailable</p>
+      {totalInCart > 0 ? (
+        <>
+          <div className={styles.cartItemContainer}>
+            {cart.map((entry) => {
+              return (
+                <div key={entry.id} className={styles.cartItem}>
+                  <p className={styles.itemName}>
+                    {entry.name[0].toUpperCase() + entry.name.slice(1)}
+                  </p>
+                  <AddToCartButton
+                    className={styles.addToCartButton}
+                    pokemonData={entry}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                  <p className={styles.lineTotal}>
+                    <img src={pokedollarIcon} alt="pokedollar" />{" "}
+                    {(entry.price * entry.quantity).toLocaleString()}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <p className={styles.cartTotal}>
+            Total: <img src={pokedollarIcon} alt="pokedollar" />
+            {totalCartPrice.toLocaleString()}
+          </p>
+          <button className={styles.checkoutButton}>Checkout</button>
+          <p className={styles.checkoutError}>Service Unavailable</p>
+        </>
+      ) : (
+        <p className={styles.emptyCartMessage}>Nothing in cart.</p>
+      )}
     </section>
   );
 };
