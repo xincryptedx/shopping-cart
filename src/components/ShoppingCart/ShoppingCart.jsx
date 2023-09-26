@@ -60,7 +60,7 @@ const ShoppingCart = ({
         {totalCartPrice.toLocaleString()}
       </p>
       <button className={styles.checkoutButton}>Checkout</button>
-      <p className={styles.checkoutError}>-Service Currently Unavailable-</p>
+      <p className={styles.checkoutError}>Service Unavailable</p>
     </section>
   );
 };
