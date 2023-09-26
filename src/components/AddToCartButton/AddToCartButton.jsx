@@ -93,6 +93,7 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
 
   const onLabelClick = () => {
     setInputOpen(true);
+    setInputValue(numberInCart);
   };
 
   const onInputKeydown = (event) => {
