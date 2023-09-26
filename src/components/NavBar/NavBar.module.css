@@ -36,4 +36,25 @@
   margin-right: 10px;
   height: 46px;
   cursor: pointer;
+  position: relative;
+}
+
+.cartBtn img {
+  height: 100%;
+}
+
+.cartQuantity {
+  position: absolute;
+  bottom: 26px;
+  left: 20px;
+
+  font-size: 0.8rem;
+  text-align: center;
+
+  width: 3ch;
+  padding: 3px;
+  background-color: var(--primary-1);
+
+  border-radius: 50px;
+  border: 2px solid var(--bg-dark-1);
 }
