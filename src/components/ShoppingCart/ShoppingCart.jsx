@@ -19,6 +19,13 @@ const ShoppingCart = ({
 
   const totalInCart = useTotalInCart(cart);
 
+  const onCancelIconKeydown = (event) => {
+    const { key } = event;
+    if (key === "Enter" || key === " ") {
+      event.target.click();
+    }
+  };
+
   return (
     <section
       role="dialog"
@@ -32,7 +39,9 @@ const ShoppingCart = ({
         alt="close cart"
         role="button"
         className={styles.cancelBtn}
+        tabIndex={shoppingCartOpen ? 0 : -1}
         onClick={() => setShoppingCartOpen(false)}
+        onKeyDown={onCancelIconKeydown}
       />
       <h1 id="title" className={styles.title}>
         Cart
