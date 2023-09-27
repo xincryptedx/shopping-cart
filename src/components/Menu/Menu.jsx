@@ -8,6 +8,13 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
   // Close NavLinks on escape key
   useSetStateOnKeydown("Escape", navLinksOpen, setNavLinksOpen, false);
 
+  const onCancelIconKeydown = (event) => {
+    const { key } = event;
+    if (key === "Enter" || key === " ") {
+      event.target.click();
+    }
+  };
+
   return (
     <section
       role="menu"
@@ -21,6 +28,8 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
         role="button"
         className={styles.cancelBtn}
         onClick={() => setNavLinksOpen(false)}
+        onKeyDown={onCancelIconKeydown}
+        tabIndex={navLinksOpen ? 0 : -1}
       />
       <ul aria-label="links">
         <Link
