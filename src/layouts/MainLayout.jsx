@@ -5,17 +5,19 @@ import NavBar from "../components/NavBar/NavBar";
 import Menu from "../components/Menu/Menu";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import useTotalCartPrice from "../hooks/useTotalCartPrice";
+import useSaveCartLocally from "../hooks/useSaveCartLocally";
 
 const MainLayout = () => {
   const [navLinksOpen, setNavLinksOpen] = useState(false);
   const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
 
   const [region, setRegion] = useState("kanto");
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  });
   const totalCartPrice = useTotalCartPrice(cart);
 
-  // Hook that loads cart from local storage on mount
-  // Hook that saves cart to local storage when it is changed
+  useSaveCartLocally(cart);
 
   return (
     <div className={styles.MainLayout}>
