@@ -14,6 +14,9 @@ const MainLayout = () => {
   const [cart, setCart] = useState([]);
   const totalCartPrice = useTotalCartPrice(cart);
 
+  // Hook that loads cart from local storage on mount
+  // Hook that saves cart to local storage when it is changed
+
   return (
     <div className={styles.MainLayout}>
       <NavBar
