@@ -51,6 +51,7 @@ const ShoppingCart = ({
                     pokemonData={entry}
                     cart={cart}
                     setCart={setCart}
+                    tabIndex={shoppingCartOpen ? 0 : -1}
                   />
                   <p className={styles.lineTotal}>
                     <img src={pokedollarIcon} alt="pokedollar" />{" "}
@@ -64,7 +65,12 @@ const ShoppingCart = ({
             Total: <img src={pokedollarIcon} alt="pokedollar" />
             {totalCartPrice.toLocaleString()}
           </p>
-          <button className={styles.checkoutButton}>Checkout</button>
+          <button
+            className={styles.checkoutButton}
+            tabIndex={shoppingCartOpen ? 0 : -1}
+          >
+            Checkout
+          </button>
           <p className={styles.checkoutError}>Service Unavailable</p>
         </>
       ) : (
