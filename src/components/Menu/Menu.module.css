@@ -1,11 +1,11 @@
-.NavLinks {
+.Menu {
   background-color: var(--bg-dark-1);
   width: 100vw;
   min-height: 100vh;
   z-index: 10;
 }
 
-.NavLinks ul {
+.Menu ul {
   margin: 0;
   padding: 0;
 }

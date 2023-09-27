@@ -8,7 +8,7 @@ import useTotalCartPrice from "../hooks/useTotalCartPrice";
 import useSaveCartLocally from "../hooks/useSaveCartLocally";
 
 const MainLayout = () => {
-  const [navLinksOpen, setNavLinksOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
 
   const [region, setRegion] = useState("kanto");
@@ -22,19 +22,15 @@ const MainLayout = () => {
   return (
     <div className={styles.MainLayout}>
       <NavBar
-        navLinksOpen={navLinksOpen}
-        setNavLinksOpen={setNavLinksOpen}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
         setShoppingCartOpen={setShoppingCartOpen}
         cart={cart}
       />
       <Menu
-        className={
-          navLinksOpen
-            ? styles.NavLinksOpen + " " + styles.NavLinks
-            : styles.NavLinks
-        }
-        navLinksOpen={navLinksOpen}
-        setNavLinksOpen={setNavLinksOpen}
+        className={menuOpen ? styles.MenuOpen + " " + styles.Menu : styles.Menu}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
       />
 
       <ShoppingCart

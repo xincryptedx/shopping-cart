@@ -6,20 +6,20 @@ import cartIcon from "../../assets/cartIcon.svg";
 import PropTypes from "prop-types";
 import useTotalInCart from "../../hooks/useTotalInCart";
 
-const NavBar = ({ setNavLinksOpen, setShoppingCartOpen, cart }) => {
+const NavBar = ({ setMenuOpen, setShoppingCartOpen, cart }) => {
   const totalInCart = useTotalInCart(cart);
   const maxTotalCount = 99;
 
-  const toggleNavLinksOpen = (event) => {
+  const toggleMenuOpen = (event) => {
     event.stopPropagation();
-    setNavLinksOpen((previous) => !previous);
+    setMenuOpen((previous) => !previous);
   };
 
   const handleKeyDownMenuIcon = (event) => {
     const { key } = event;
     if (key === "Enter" || key === " ") {
       event.preventDefault();
-      setNavLinksOpen(true);
+      setMenuOpen(true);
     }
   };
 
@@ -52,7 +52,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen, cart }) => {
         role="button"
         tabIndex="0"
         className={styles.menuBtn}
-        onClick={toggleNavLinksOpen}
+        onClick={toggleMenuOpen}
         onKeyDown={handleKeyDownMenuIcon}
       />
 
@@ -81,7 +81,7 @@ const NavBar = ({ setNavLinksOpen, setShoppingCartOpen, cart }) => {
 
 NavBar.propTypes = {
   setShoppingCartOpen: PropTypes.func.isRequired,
-  setNavLinksOpen: PropTypes.func.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
   cart: PropTypes.arrayOf(PropTypes.object),
 };
 

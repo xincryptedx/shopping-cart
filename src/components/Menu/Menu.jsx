@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import cancelIcon from "../../assets/cancel.svg";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
 
-const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
-  // Close NavLinks on escape key
-  useSetStateOnKeydown("Escape", navLinksOpen, setNavLinksOpen, false);
+const Menu = ({ className, menuOpen, setMenuOpen }) => {
+  // Close Menu on escape key
+  useSetStateOnKeydown("Escape", menuOpen, setMenuOpen, false);
 
   const onCancelIconKeydown = (event) => {
     const { key } = event;
@@ -18,26 +18,24 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
   return (
     <section
       role="menu"
-      className={
-        className ? className + " " + styles.NavLinks : styles.NavLinks
-      }
+      className={className ? className + " " + styles.Menu : styles.Menu}
     >
       <img
         src={cancelIcon}
         alt="close menu"
         role="button"
         className={styles.cancelBtn}
-        onClick={() => setNavLinksOpen(false)}
+        onClick={() => setMenuOpen(false)}
         onKeyDown={onCancelIconKeydown}
-        tabIndex={navLinksOpen ? 0 : -1}
+        tabIndex={menuOpen ? 0 : -1}
       />
       <ul aria-label="links">
         <Link
           to="products"
           aria-label="prize counter"
           className={styles.productsBtn}
-          onClick={() => setNavLinksOpen(false)}
-          tabIndex={navLinksOpen ? 0 : -1}
+          onClick={() => setMenuOpen(false)}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Prize Counter
         </Link>
@@ -48,8 +46,8 @@ const Menu = ({ className, navLinksOpen, setNavLinksOpen }) => {
 
 Menu.propTypes = {
   className: PropTypes.string,
-  navLinksOpen: PropTypes.bool.isRequired,
-  setNavLinksOpen: PropTypes.func.isRequired,
+  menuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
 };
 
 export default Menu;
