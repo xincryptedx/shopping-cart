@@ -3,7 +3,13 @@ import styles from "./AddToCartButton.module.css";
 import PropTypes from "prop-types";
 import useSyncValues from "../../hooks/useSyncValues";
 
-const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
+const AddToCartButton = ({
+  className,
+  pokemonData,
+  cart,
+  setCart,
+  tabIndex,
+}) => {
   const [numberInCart, setNumberInCart] = useState(0);
   const [inputOpen, setInputOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -143,12 +149,20 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
       }
     >
       {numberInCart <= 0 ? (
-        <button onClick={onAddClick} className={styles.initialButton}>
+        <button
+          onClick={onAddClick}
+          className={styles.initialButton}
+          tabIndex={tabIndex}
+        >
           Add to Cart
         </button>
       ) : (
         <>
-          <button onClick={onSubtractClick} className={styles.subtractButton}>
+          <button
+            onClick={onSubtractClick}
+            className={styles.subtractButton}
+            tabIndex={tabIndex}
+          >
             -
           </button>
           {inputOpen ? (
@@ -163,13 +177,14 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
               onFocus={onInputFocus}
               onBlur={onInputBlur}
               autoFocus
+              tabIndex={tabIndex}
             />
           ) : (
             <p
               className={styles.quantityLabel}
               role="button"
               aria-label="show input"
-              tabIndex={0}
+              tabIndex={tabIndex}
               onClick={onLabelClick}
               onKeyDown={onLabelKeydown}
             >
@@ -177,7 +192,11 @@ const AddToCartButton = ({ className, pokemonData, cart, setCart }) => {
             </p>
           )}
 
-          <button onClick={onAddClick} className={styles.addButton}>
+          <button
+            onClick={onAddClick}
+            className={styles.addButton}
+            tabIndex={tabIndex}
+          >
             +
           </button>
         </>
@@ -191,6 +210,7 @@ AddToCartButton.propTypes = {
   pokemonData: PropTypes.object,
   cart: PropTypes.arrayOf(PropTypes.object),
   setCart: PropTypes.func,
+  tabIndex: PropTypes.number,
 };
 
 export default AddToCartButton;
