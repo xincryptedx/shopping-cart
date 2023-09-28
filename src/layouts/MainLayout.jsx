@@ -24,6 +24,7 @@ const MainLayout = () => {
       <NavBar
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
+        shoppingCartOpen={shoppingCartOpen}
         setShoppingCartOpen={setShoppingCartOpen}
         cart={cart}
       />
