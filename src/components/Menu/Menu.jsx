@@ -30,15 +30,31 @@ const Menu = ({ className, menuOpen, setMenuOpen }) => {
         tabIndex={menuOpen ? 0 : -1}
       />
       <ul aria-label="links">
-        <Link
-          to="products"
-          aria-label="prize counter"
-          className={styles.productsBtn}
-          onClick={() => setMenuOpen(false)}
-          tabIndex={menuOpen ? 0 : -1}
-        >
-          Prize Counter
-        </Link>
+        <li>
+          <Link
+            to="/"
+            aria-label="Home"
+            className={styles.productsBtn}
+            onClick={() => setMenuOpen(false)}
+            tabIndex={menuOpen ? 0 : -1}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="products"
+            aria-label="Pokemon Prizes"
+            className={styles.productsBtn}
+            onClick={() => setMenuOpen(false)}
+            tabIndex={menuOpen ? 0 : -1}
+          >
+            Pokemon Prizes
+          </Link>
+        </li>
+        <li>
+          <a href="https://github.com/xincryptedx/shopping-cart">Github</a>
+        </li>
       </ul>
     </section>
   );
