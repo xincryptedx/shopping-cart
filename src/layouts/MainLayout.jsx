@@ -47,7 +47,16 @@ const MainLayout = () => {
       />
 
       <main className={styles.routeContainer}>
-        <Outlet context={[region, setRegion, cart, setCart]} />
+        <Outlet
+          context={[
+            region,
+            setRegion,
+            cart,
+            setCart,
+            shoppingCartOpen,
+            menuOpen,
+          ]}
+        />
       </main>
     </div>
   );
