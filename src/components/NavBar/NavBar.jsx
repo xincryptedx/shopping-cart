@@ -6,7 +6,13 @@ import cartIcon from "../../assets/cartIcon.svg";
 import PropTypes from "prop-types";
 import useTotalInCart from "../../hooks/useTotalInCart";
 
-const NavBar = ({ setMenuOpen, setShoppingCartOpen, cart }) => {
+const NavBar = ({
+  menuOpen,
+  setMenuOpen,
+  shoppingCartOpen,
+  setShoppingCartOpen,
+  cart,
+}) => {
   const totalInCart = useTotalInCart(cart);
   const maxTotalCount = 99;
 
@@ -50,19 +56,24 @@ const NavBar = ({ setMenuOpen, setShoppingCartOpen, cart }) => {
         src={menuIcon}
         alt="open menu"
         role="button"
-        tabIndex="0"
+        tabIndex={shoppingCartOpen || menuOpen ? -1 : 0}
         className={styles.menuBtn}
         onClick={toggleMenuOpen}
         onKeyDown={handleKeyDownMenuIcon}
       />
 
-      <Link to="/" className={styles.homeBtn} onKeyDown={handleKeyDownHomeIcon}>
+      <Link
+        to="/"
+        className={styles.homeBtn}
+        tabIndex={shoppingCartOpen || menuOpen ? -1 : 0}
+        onKeyDown={handleKeyDownHomeIcon}
+      >
         <img src={logoSmall} alt="home" />
       </Link>
 
       <div
         role="button"
-        tabIndex="0"
+        tabIndex={shoppingCartOpen || menuOpen ? -1 : 0}
         className={styles.cartBtn}
         onClick={toggleShoppingCartOpen}
         onKeyDown={handleKeyDownShoppingCartIcon}
@@ -80,6 +91,8 @@ const NavBar = ({ setMenuOpen, setShoppingCartOpen, cart }) => {
 };
 
 NavBar.propTypes = {
+  shoppingCartOpen: PropTypes.bool.isRequired,
+  menuOpen: PropTypes.bool.isRequired,
   setShoppingCartOpen: PropTypes.func.isRequired,
   setMenuOpen: PropTypes.func.isRequired,
   cart: PropTypes.arrayOf(PropTypes.object),
