@@ -54,6 +54,16 @@ const Menu = ({ className, menuOpen, setMenuOpen }) => {
           <a href="https://github.com/xincryptedx/shopping-cart">Github</a>
         </li>
       </ul>
+
+      <div className={styles.regionButtons}>
+        <h1>Region</h1>
+        <button>Kanto</button>
+        <button>Johto</button>
+        <button>Hoenn</button>
+        <button>Sinnoh</button>
+        <button>Unova</button>
+        <button>Alola</button>
+      </div>
     </section>
   );
 };
