@@ -6,7 +6,13 @@ import maleIcon from "../../assets/maleIcon.svg";
 import femaleIcon from "../../assets/femaleIcon.svg";
 import agenderIcon from "../../assets/agenderIcon.svg";
 
-const ProductCard = ({ pokemonData, cart, setCart }) => {
+const ProductCard = ({
+  pokemonData,
+  cart,
+  setCart,
+  shoppingCartOpen,
+  menuOpen,
+}) => {
   const capName = pokemonData.name[0].toUpperCase() + pokemonData.name.slice(1);
 
   return (
@@ -51,6 +57,7 @@ const ProductCard = ({ pokemonData, cart, setCart }) => {
         pokemonData={pokemonData}
         cart={cart}
         setCart={setCart}
+        tabIndex={shoppingCartOpen || menuOpen ? -1 : 0}
       />
     </div>
   );
@@ -60,6 +67,8 @@ ProductCard.propTypes = {
   pokemonData: PropTypes.object,
   cart: PropTypes.arrayOf(PropTypes.object),
   setCart: PropTypes.func,
+  shoppingCartOpen: PropTypes.bool.isRequired,
+  menuOpen: PropTypes.bool.isRequired,
 };
 
 export default ProductCard;
