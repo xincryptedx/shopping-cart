@@ -29,12 +29,11 @@ const Menu = ({ className, menuOpen, setMenuOpen }) => {
         onKeyDown={onCancelIconKeydown}
         tabIndex={menuOpen ? 0 : -1}
       />
-      <ul aria-label="links">
+      <ul aria-label="links" className={styles.links}>
         <li>
           <Link
             to="/"
             aria-label="Home"
-            className={styles.productsBtn}
             onClick={() => setMenuOpen(false)}
             tabIndex={menuOpen ? 0 : -1}
           >
@@ -45,7 +44,6 @@ const Menu = ({ className, menuOpen, setMenuOpen }) => {
           <Link
             to="products"
             aria-label="Pokemon Prizes"
-            className={styles.productsBtn}
             onClick={() => setMenuOpen(false)}
             tabIndex={menuOpen ? 0 : -1}
           >
