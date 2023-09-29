@@ -4,7 +4,14 @@ import PropTypes from "prop-types";
 import cancelIcon from "../../assets/cancel.svg";
 import useSetStateOnKeydown from "../../hooks/useSetStateOnKeydown";
 
-const Menu = ({ className, menuOpen, setMenuOpen, region, setRegion }) => {
+const Menu = ({
+  className,
+  menuOpen,
+  setMenuOpen,
+  region,
+  setRegion,
+  setStockRefreshTrigger,
+}) => {
   // Close Menu on escape key
   useSetStateOnKeydown("Escape", menuOpen, setMenuOpen, false);
 
@@ -13,6 +20,11 @@ const Menu = ({ className, menuOpen, setMenuOpen, region, setRegion }) => {
     if (key === "Enter" || key === " ") {
       event.target.click();
     }
+  };
+
+  const onRegionClick = (region) => {
+    setRegion(region);
+    setStockRefreshTrigger(true);
   };
 
   return (
@@ -59,39 +71,27 @@ const Menu = ({ className, menuOpen, setMenuOpen, region, setRegion }) => {
         <h1>Region</h1>
         <button
           className={region === "kanto" ? styles.selectedRegion : ""}
-          onClick={() => setRegion("kanto")}
+          onClick={() => onRegionClick("kanto")}
         >
           Kanto
         </button>
         <button
           className={region === "original-johto" ? styles.selectedRegion : ""}
-          onClick={() => setRegion("original-johto")}
+          onClick={() => onRegionClick("original-johto")}
         >
           Johto
         </button>
         <button
           className={region === "hoenn" ? styles.selectedRegion : ""}
-          onClick={() => setRegion("hoenn")}
+          onClick={() => onRegionClick("hoenn")}
         >
           Hoenn
         </button>
         <button
           className={region === "original-sinnoh" ? styles.selectedRegion : ""}
-          onClick={() => setRegion("original-sinnoh")}
+          onClick={() => onRegionClick("original-sinnoh")}
         >
           Sinnoh
-        </button>
-        <button
-          className={region === "original-unova" ? styles.selectedRegion : ""}
-          onClick={() => setRegion("original-unova")}
-        >
-          Unova
-        </button>
-        <button
-          className={region === "updated-alola" ? styles.selectedRegion : ""}
-          onClick={() => setRegion("updated-alola")}
-        >
-          Alola
         </button>
       </div>
     </section>
@@ -104,6 +104,7 @@ Menu.propTypes = {
   setMenuOpen: PropTypes.func.isRequired,
   region: PropTypes.string.isRequired,
   setRegion: PropTypes.func.isRequired,
+  setStockRefreshTrigger: PropTypes.func.isRequired,
 };
 
 export default Menu;
