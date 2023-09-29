@@ -1,9 +1,10 @@
 .Menu {
   display: grid;
-  grid-template: 70px repeat(2, min-content) / 1fr 1fr;
+  grid-template: 70px min-content 1fr min-content / 1fr 1fr;
   grid-template-areas:
     "title cancel"
     "links links"
+    ". ."
     "regions regions";
   background-color: var(--bg-dark-1);
   width: 100vw;
@@ -60,4 +61,37 @@
 
 .regionButtons {
   grid-area: regions;
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+  margin: 0 8px;
+  margin-bottom: 40px;
+  padding: 0 8px;
+  padding-bottom: 12px;
+  background-color: var(--bg-dark-2);
+  box-shadow: 1px 1px 2px black inset;
+  border-radius: 5px;
+}
+
+.regionButtons button {
+  height: 40px;
+  margin-bottom: 8px;
+  border-radius: 15px;
+  border: 2px solid black;
+  background-color: var(--trinary-1);
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.regionButtons .selectedRegion {
+  background-color: var(--trinary-2);
+}
+
+.regionButtons h1 {
+  justify-self: center;
+  grid-column: -1/1;
+  font-size: 1.8rem;
+  color: var(--bg-light-1);
+  text-shadow: 2px 2px 1px black;
 }
