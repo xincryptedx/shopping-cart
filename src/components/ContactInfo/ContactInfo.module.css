@@ -1,0 +1,28 @@
+.ContactInfo {
+  display: grid;
+  row-gap: 8px;
+
+  font-style: normal;
+  font-weight: bold;
+
+  background-color: var(--bg-dark-1);
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 2px solid var(--secondary-1);
+}
+
+.ContactInfo h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--primary-1);
+  text-shadow: 2px 2px 2px var(--bg-dark-2);
+}
+
+.ContactInfo div {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.ContactInfo p span {
+  font-weight: normal;
+}
