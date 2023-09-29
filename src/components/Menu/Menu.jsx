@@ -98,6 +98,18 @@ const Menu = ({
         >
           Sinnoh
         </button>
+        <button
+          className={region === "original-unova" ? styles.selectedRegion : ""}
+          onClick={() => onRegionClick("original-unova")}
+        >
+          Unova
+        </button>
+        <button
+          className={region === "updated-alola" ? styles.selectedRegion : ""}
+          onClick={() => onRegionClick("updated-alola")}
+        >
+          Alola
+        </button>
       </div>
     </section>
   );
