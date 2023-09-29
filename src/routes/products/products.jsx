@@ -4,7 +4,6 @@ import useFetchPokedex from "../../hooks/useFetchPokedex";
 import styles from "./products.module.css";
 import usePreparePokemonData from "../../hooks/usePreparePokemonData";
 import { useOutletContext } from "react-router-dom";
-import useDetermineStockRefresh from "../../hooks/useDetermineStockRefresh";
 
 const Products = () => {
   // Get outlet context
@@ -55,7 +54,7 @@ const Products = () => {
   if (!pokedexLoading && !pokemonLoading)
     return (
       <div className={styles.productsRoute}>
-        <SortAndFilter nextUpdate={nextUpdate} />
+        <SortAndFilter nextUpdate={nextUpdate} region={region} />
         <ProductDeck
           pokemonData={pokemonData}
           cart={cart}
