@@ -1,7 +1,8 @@
 .SortAndFilter {
   background-color: var(--bg-light-2);
   height: min-content;
-  padding: 5px 10px;
+  padding: 5px 16px;
+  border-bottom: 2px solid var(--bg-dark-1);
 
   display: grid;
   grid-auto-flow: column;
@@ -11,9 +12,16 @@
 .stockTimer {
   color: var(--text-dark);
   align-self: center;
+  font-weight: bold;
 }
 
 .region {
   align-self: center;
   justify-self: end;
+  color: var(--text-light);
+  font-weight: bold;
+  background-color: var(--bg-dark-1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px black inset;
 }
