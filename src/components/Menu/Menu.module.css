@@ -12,6 +12,19 @@
   z-index: 10;
 }
 
+.Menu .backgroundImage {
+  background-image: url(/pokeballPattern.png);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 20%;
+  z-index: 0;
+}
+
+.Menu > * {
+  z-index: 1;
+}
+
 .title {
   grid-area: title;
   justify-self: start;
@@ -20,6 +33,11 @@
   font-size: 2.5rem;
   color: var(--bg-light-1);
   text-shadow: 2px 2px 1px var(--bg-dark-2);
+
+  background-color: var(--bg-dark-2);
+  box-shadow: 2px 2px 3px black;
+  border-radius: 5px;
+  padding: 4px 8px;
 }
 
 .cancelBtn {
@@ -30,6 +48,7 @@
   margin-right: 8px;
   background-color: var(--bg-dark-2);
   border-radius: 50px;
+  border: 2px solid var(--bg-light-2);
 }
 
 .links {
