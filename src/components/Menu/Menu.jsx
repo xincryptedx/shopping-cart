@@ -120,6 +120,7 @@ const Menu = ({
           Alola
         </button>
       </div>
+      <div className={styles.backgroundImage} aria-hidden />
     </section>
   );
 };
