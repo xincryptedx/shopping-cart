@@ -6,7 +6,9 @@ const ContactInfo = () => {
       <h1>Contact Us!</h1>
       <p>Phone: 555-555-5555</p>
       <p>info@rocketgamecorner.com</p>
-      <p>Hours: All Day Every Day!</p>
+      <p>
+        Hours: <span>All Day Every Day!</span>
+      </p>
       <div>
         <p>Rocket Game Corner</p>
         <p>123 Lucky Lane</p>
