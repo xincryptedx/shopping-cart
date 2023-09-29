@@ -3,15 +3,25 @@ const generatePokemon = (pokemon) => {
     const basicInfoUrl = `https://pokeapi.co/api/v2/pokemon/${entry.pokemon_species.name}`;
     const speciesInfoUrl = entry.pokemon_species.url;
 
-    const basicInfoPromise = fetch(basicInfoUrl).then((response) =>
-      response.json()
-    );
-    const speciesInfoPromise = fetch(speciesInfoUrl).then((response) =>
-      response.json()
-    );
+    const basicInfoPromise = fetch(basicInfoUrl)
+      .then((response) => response.json())
+      .catch(() => {
+        return null;
+      });
+
+    const speciesInfoPromise = fetch(speciesInfoUrl)
+      .then((response) => response.json())
+      .catch(() => {
+        return null;
+      });
 
     return Promise.all([basicInfoPromise, speciesInfoPromise]).then(
       ([basicInfo, speciesInfo]) => {
+        if (basicInfo === null || speciesInfo === null) {
+          console.log("Pokemon data not found", entry.pokemon_species.name);
+          return null;
+        }
+
         // Destructure from species response
         const {
           capture_rate: captureRate,
@@ -90,7 +100,9 @@ const generatePokemon = (pokemon) => {
     );
   });
 
-  return Promise.all(promises);
+  return Promise.all(promises).then((results) =>
+    results.filter((result) => result !== null)
+  );
 };
 
 export default generatePokemon;
