@@ -12,3 +12,8 @@
   color: var(--text-dark);
   align-self: center;
 }
+
+.region {
+  align-self: center;
+  justify-self: end;
+}
