@@ -19,8 +19,12 @@ const MainLayout = () => {
   const totalCartPrice = useTotalCartPrice(cart);
 
   // Check if stock data needs refreshed and when next update is
-  const [stockRefreshTrigger, setStockRefreshTrigger, nextUpdate] =
-    useDetermineStockRefresh();
+  const [
+    stockRefreshTrigger,
+    setStockRefreshTrigger,
+    nextUpdate,
+    setNextUpdate,
+  ] = useDetermineStockRefresh();
 
   useSaveCartLocally(cart);
 
@@ -40,6 +44,7 @@ const MainLayout = () => {
         region={region}
         setRegion={setRegion}
         setStockRefreshTrigger={setStockRefreshTrigger}
+        setNextUpdate={setNextUpdate}
       />
 
       <ShoppingCart
