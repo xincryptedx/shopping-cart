@@ -8,14 +8,11 @@ const useFetchPokedex = (stockRefreshTrigger, region = "kanto") => {
   let validatedRegion = region.toString().toLocaleLowerCase();
   const validRegions = [
     "kanto",
-    "johto",
+    "original-johto",
     "hoenn",
-    "sinnoh",
-    "unova",
-    "kalos",
-    "alola",
-    "galar",
-    "paldea",
+    "original-sinnoh",
+    "original-unova",
+    "updated-alola",
   ];
   if (!validRegions.includes(validatedRegion)) {
     validatedRegion = "kanto";
