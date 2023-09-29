@@ -30,9 +30,9 @@
   justify-self: start;
   align-self: center;
   margin-left: 10px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--bg-light-1);
-  text-shadow: 2px 2px 1px var(--bg-dark-2);
+  text-shadow: 2px 2px 1px black;
 
   background-color: var(--bg-dark-2);
   box-shadow: 2px 2px 3px black;
@@ -69,13 +69,15 @@
   border-radius: 5px;
   width: fit-content;
   background-color: var(--bg-light-2);
-  box-shadow: 1px 1px 3px var(--bg-dark-1);
+  box-shadow: 2px 2px 2px var(--bg-dark-1);
+  padding: 5px 10px;
 }
 
 .links a {
   text-decoration: none;
   color: var(--text-dark);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
 .regionButtons {
@@ -91,6 +93,7 @@
   background-color: var(--bg-dark-2);
   box-shadow: 2px 2px 3px black;
   border-radius: 5px;
+  border: 1px solid black;
 }
 
 .regionButtons button {
@@ -110,7 +113,7 @@
 .regionButtons h1 {
   justify-self: center;
   grid-column: -1/1;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: var(--bg-light-1);
   text-align: center;
   text-shadow: 2px 2px 1px black;
