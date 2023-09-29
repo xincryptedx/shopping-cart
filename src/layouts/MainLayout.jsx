@@ -6,6 +6,7 @@ import Menu from "../components/Menu/Menu";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import useTotalCartPrice from "../hooks/useTotalCartPrice";
 import useSaveCartLocally from "../hooks/useSaveCartLocally";
+import useDetermineStockRefresh from "../hooks/useDetermineStockRefresh";
 
 const MainLayout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +17,10 @@ const MainLayout = () => {
     return JSON.parse(localStorage.getItem("cart")) || [];
   });
   const totalCartPrice = useTotalCartPrice(cart);
+
+  // Check if stock data needs refreshed and when next update is
+  const [stockRefreshTrigger, setStockRefreshTrigger, nextUpdate] =
+    useDetermineStockRefresh();
 
   useSaveCartLocally(cart);
 
@@ -58,6 +63,9 @@ const MainLayout = () => {
             setCart,
             shoppingCartOpen,
             menuOpen,
+            stockRefreshTrigger,
+            setStockRefreshTrigger,
+            nextUpdate,
           ]}
         />
       </main>

@@ -8,11 +8,16 @@ import useDetermineStockRefresh from "../../hooks/useDetermineStockRefresh";
 
 const Products = () => {
   // Get outlet context
-  const [region, setRegion, cart, setCart, shoppingCartOpen, menuOpen] =
-    useOutletContext();
-
-  // Check if stock data needs refreshed and when next update is
-  const [stockRefreshTrigger, nextUpdate] = useDetermineStockRefresh();
+  const [
+    region,
+    setRegion,
+    cart,
+    setCart,
+    shoppingCartOpen,
+    menuOpen,
+    stockRefreshTrigger,
+    nextUpdate,
+  ] = useOutletContext();
 
   // Fetch pokedex data for given region
   const {
