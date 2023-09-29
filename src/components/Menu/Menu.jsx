@@ -57,7 +57,7 @@ const Menu = ({
             onClick={() => setMenuOpen(false)}
             tabIndex={menuOpen ? 0 : -1}
           >
-            Home
+            ▶ Home
           </Link>
         </li>
         <li>
@@ -67,11 +67,11 @@ const Menu = ({
             onClick={() => setMenuOpen(false)}
             tabIndex={menuOpen ? 0 : -1}
           >
-            Pokemon Prizes
+            ▶ Pokemon Prizes
           </Link>
         </li>
         <li>
-          <a href="https://github.com/xincryptedx/shopping-cart">Github</a>
+          <a href="https://github.com/xincryptedx/shopping-cart">▶ Github</a>
         </li>
       </ul>
 
