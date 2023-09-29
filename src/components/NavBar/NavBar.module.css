@@ -7,8 +7,8 @@
   position: relative;
 
   background: var(--bg-light-1);
-
-  border-bottom: 1px solid black;
+  padding: 5px 0px;
+  border-bottom: 2px solid var(--bg-dark-1);
 
   min-height: 45px;
   max-height: 65px;
@@ -23,7 +23,6 @@
 
 .homeBtn {
   justify-self: center;
-  margin: 5px 0px;
   height: 58px;
 }
 
