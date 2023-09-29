@@ -39,6 +39,7 @@ const MainLayout = () => {
         setMenuOpen={setMenuOpen}
         region={region}
         setRegion={setRegion}
+        setStockRefreshTrigger={setStockRefreshTrigger}
       />
 
       <ShoppingCart
@@ -64,7 +65,6 @@ const MainLayout = () => {
             shoppingCartOpen,
             menuOpen,
             stockRefreshTrigger,
-            setStockRefreshTrigger,
             nextUpdate,
           ]}
         />
