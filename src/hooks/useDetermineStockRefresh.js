@@ -33,7 +33,7 @@ const useDetermineStockRefresh = () => {
     }
   }, []);
 
-  return [stockRefreshTrigger, nextUpdate];
+  return [stockRefreshTrigger, setStockRefreshTrigger, nextUpdate];
 };
 
 export default useDetermineStockRefresh;
