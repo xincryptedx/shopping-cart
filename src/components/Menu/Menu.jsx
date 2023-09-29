@@ -30,6 +30,8 @@ const Menu = ({
     const hourTimeout = 60 * 60 * 1000; // 60m 60s 1000ms
     const currentTime = new Date();
     setNextUpdate(new Date(currentTime.getTime() + hourTimeout));
+
+    setMenuOpen(false);
   };
 
   return (
@@ -46,6 +48,7 @@ const Menu = ({
         onKeyDown={onCancelIconKeydown}
         tabIndex={menuOpen ? 0 : -1}
       />
+      <h1 className={styles.title}>Menu</h1>
       <ul aria-label="links" className={styles.links}>
         <li>
           <Link
