@@ -15,6 +15,19 @@
   z-index: 10;
 }
 
+.ShoppingCart .backgroundImage {
+  background-image: url(/pokeballPattern.png);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 20%;
+  z-index: 0;
+}
+
+.ShoppingCart > * {
+  z-index: 1;
+}
+
 .cancelBtn {
   grid-area: cancel;
   width: 35px;
@@ -23,16 +36,23 @@
   margin-right: 8px;
   background-color: var(--bg-dark-2);
   border-radius: 50px;
+  border: 2px solid var(--bg-light-2);
 }
 
 .title {
   grid-area: title;
   justify-self: start;
   align-self: center;
-  margin-left: 10px;
+
   font-size: 2.5rem;
   color: var(--bg-light-1);
-  text-shadow: 2px 2px 1px var(--bg-dark-2);
+  text-shadow: 2px 2px 1px black;
+
+  background-color: var(--bg-dark-2);
+  box-shadow: 2px 2px 3px black;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-left: 10px;
 }
 
 .cartItemContainer {
@@ -82,6 +102,7 @@
   justify-self: end;
 
   background-color: var(--bg-dark-2);
+  box-shadow: 2px 2px 3px black;
   margin-right: 8px;
   padding: 4px 8px;
   border-radius: 5px;
@@ -105,6 +126,8 @@
 
   background-color: var(--trinary-1);
   border: 2px solid var(--bg-dark-2);
+  box-shadow: 1px 1px 2px black;
+
   border-radius: 5px;
 }
 
