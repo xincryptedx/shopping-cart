@@ -80,36 +80,42 @@ const Menu = ({
         <button
           className={region === "kanto" ? styles.selectedRegion : ""}
           onClick={() => onRegionClick("kanto")}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Kanto
         </button>
         <button
           className={region === "original-johto" ? styles.selectedRegion : ""}
           onClick={() => onRegionClick("original-johto")}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Johto
         </button>
         <button
           className={region === "hoenn" ? styles.selectedRegion : ""}
           onClick={() => onRegionClick("hoenn")}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Hoenn
         </button>
         <button
           className={region === "original-sinnoh" ? styles.selectedRegion : ""}
           onClick={() => onRegionClick("original-sinnoh")}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Sinnoh
         </button>
         <button
           className={region === "original-unova" ? styles.selectedRegion : ""}
           onClick={() => onRegionClick("original-unova")}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Unova
         </button>
         <button
           className={region === "updated-alola" ? styles.selectedRegion : ""}
           onClick={() => onRegionClick("updated-alola")}
+          tabIndex={menuOpen ? 0 : -1}
         >
           Alola
         </button>
