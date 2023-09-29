@@ -33,13 +33,29 @@
 
 .links {
   grid-area: links;
+  display: grid;
+  row-gap: 18px;
   list-style: none;
-
   background-color: var(--bg-light-1);
   border-radius: 5px;
   box-shadow: 1px 1px 2px black inset;
-  padding: 10px 0;
+  padding: 10px 8px;
   margin: 0 8px;
+}
+
+.links li {
+  border-left: 3px solid var(--primary-1);
+  border-right: 3px solid var(--secondary-1);
+  border-radius: 5px;
+  width: fit-content;
+  background-color: var(--bg-light-2);
+  box-shadow: 1px 1px 3px var(--bg-dark-1);
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 1.5rem;
 }
 
 .regionButtons {
