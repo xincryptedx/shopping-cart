@@ -11,6 +11,7 @@ const Menu = ({
   region,
   setRegion,
   setStockRefreshTrigger,
+  setNextUpdate,
 }) => {
   // Close Menu on escape key
   useSetStateOnKeydown("Escape", menuOpen, setMenuOpen, false);
@@ -25,6 +26,10 @@ const Menu = ({
   const onRegionClick = (region) => {
     setRegion(region);
     setStockRefreshTrigger(true);
+
+    const hourTimeout = 60 * 60 * 1000; // 60m 60s 1000ms
+    const currentTime = new Date();
+    setNextUpdate(new Date(currentTime.getTime() + hourTimeout));
   };
 
   return (
@@ -105,6 +110,7 @@ Menu.propTypes = {
   region: PropTypes.string.isRequired,
   setRegion: PropTypes.func.isRequired,
   setStockRefreshTrigger: PropTypes.func.isRequired,
+  setNextUpdate: PropTypes.func.isRequired,
 };
 
 export default Menu;
