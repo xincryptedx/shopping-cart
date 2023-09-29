@@ -2,7 +2,6 @@
   text-decoration: none;
   background-color: var(--secondary-2);
   padding: 10px;
-  margin: 5px 5px;
   height: min-content;
   display: grid;
   row-gap: 10px;
