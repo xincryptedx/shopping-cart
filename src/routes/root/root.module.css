@@ -1,5 +1,6 @@
 .rootRoute {
   display: grid;
+  row-gap: 10px;
   background-color: var(--bg-dark-2);
   height: 100%;
   padding: 5px 8px;
