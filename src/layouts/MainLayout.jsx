@@ -32,6 +32,8 @@ const MainLayout = () => {
         className={menuOpen ? styles.MenuOpen + " " + styles.Menu : styles.Menu}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
+        region={region}
+        setRegion={setRegion}
       />
 
       <ShoppingCart
