@@ -1,7 +1,9 @@
 .rootRoute {
+  display: grid;
   background-color: var(--bg-dark-2);
-  color: var(--text-light);
   height: 100%;
 
-  display: grid;
+  color: var(--text-light);
+
+  overflow-y: auto;
 }
