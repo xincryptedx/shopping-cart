@@ -85,6 +85,7 @@ const ShoppingCart = ({
       ) : (
         <p className={styles.emptyCartMessage}>Nothing in cart.</p>
       )}
+      <div className={styles.backgroundImage} aria-hidden />
     </section>
   );
 };
