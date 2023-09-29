@@ -1,6 +1,6 @@
 .Menu {
   display: grid;
-  grid-template: 70px min-content 1fr min-content / 1fr 1fr;
+  grid-template: 70px min-content 40px min-content / 1fr 1fr;
   grid-template-areas:
     "title cancel"
     "links links"
@@ -89,7 +89,7 @@
   padding: 0 8px;
   padding-bottom: 12px;
   background-color: var(--bg-dark-2);
-  box-shadow: 1px 1px 2px black inset;
+  box-shadow: 2px 2px 3px black;
   border-radius: 5px;
 }
 
@@ -112,5 +112,10 @@
   grid-column: -1/1;
   font-size: 1.8rem;
   color: var(--bg-light-1);
+  text-align: center;
   text-shadow: 2px 2px 1px black;
+  border-bottom: 2px solid var(--bg-light-1);
+  border-top: 2px solid var(--bg-light-1);
+  padding: 3px;
+  width: 90%;
 }
