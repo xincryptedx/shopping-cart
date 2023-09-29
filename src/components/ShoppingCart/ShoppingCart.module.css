@@ -1,6 +1,6 @@
 .ShoppingCart {
   display: grid;
-  grid-template: repeat(5, min-content) / 1fr 1fr;
+  grid-template: 70px repeat(4, min-content) / 1fr 1fr;
   grid-template-areas:
     "title cancel"
     "items items"
@@ -28,6 +28,7 @@
 .title {
   grid-area: title;
   justify-self: start;
+  align-self: center;
   margin-left: 10px;
   font-size: 2.5rem;
   color: var(--bg-light-1);
