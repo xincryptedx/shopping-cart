@@ -25,9 +25,7 @@ const FrequentQuestions = () => {
       {questions.map((entry, index) => {
         return (
           <Question
-            questionText={entry.question}
-            answerText={entry.answer}
-            open={entry.open}
+            question={entry}
             toggleQuestion={toggleQuestion}
             index={index}
             key={index}
