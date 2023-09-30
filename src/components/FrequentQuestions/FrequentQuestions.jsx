@@ -6,6 +6,20 @@ import Question from "./Question";
 const FrequentQuestions = () => {
   const [questions, setQuestions] = useState(questionData);
 
+  const toggleQuestion = (index) => {
+    setQuestions(
+      questions.map((entry, i) => {
+        if (i === index) {
+          entry.open = !entry.open;
+        } else {
+          entry.open = false;
+        }
+
+        return entry;
+      })
+    );
+  };
+
   return (
     <div className={styles.FAQ}>
       {questions.map((entry, index) => {
@@ -14,8 +28,7 @@ const FrequentQuestions = () => {
             questionText={entry.question}
             answerText={entry.answer}
             open={entry.open}
-            questions={questions}
-            setQuestions={setQuestions}
+            toggleQuestion={toggleQuestion}
             index={index}
             key={index}
           />
