@@ -17,21 +17,25 @@
   position: relative;
   padding-right: 80px;
   transition: all 0.4s ease;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .questionText::after {
   content: "+";
+  color: var(--primary-1);
+  font-size: 1.4rem;
   position: absolute;
   top: 50%;
   right: 0px;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
-  transition: all 0.2s ease;
 }
 
 .open .questionText::after {
   content: "-";
+  color: var(--secondary-1);
 }
 
 .answerText {
@@ -39,6 +43,7 @@
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
+  font-style: italic;
 }
 
 .open .answerText {
