@@ -1,14 +1,8 @@
 const questions = [
   {
-    question: "Is this a front for Team Rocket?",
+    question: "How do you procure the prize Pokemon at the Rocket Game Corner?",
     answer:
-      "While we cannot disclose details of our parent companies, we can assure you that the Rocket Game Corner is a lawful, legitimate business. Any similarities to other organizations with 'Rocket' in the name are purely coincidental.",
-    open: false,
-  },
-  {
-    question: "How do you procure the prize Pokémon at the Rocket Game Corner?",
-    answer:
-      "Our prize Pokémon are sourced from the most reputable and non-suspicious Pokémon suppliers as well as donors trying to rehome unwanted Pokemon. Rest assured, all acquisitions are made through completely above-board channels.",
+      "Our prize Pokemon are sourced from the most reputable and non-suspicious Pokemon suppliers as well as donors trying to rehome unwanted Pokemon. Rest assured, all acquisitions are made through completely above-board channels.",
     open: false,
   },
   {
@@ -18,10 +12,15 @@ const questions = [
     open: false,
   },
   {
-    question:
-      "The Porygon I won seems glitchy and unstable. Is something wrong with it?",
+    question: "The Porygon I won seems glitchy and unstable.",
     answer:
-      "Please do not be concerned - some minor glitches are to be expected when receiving a brand new Porygon fresh off the assembly line! Please note, however, that unofficial upgrade modules are not supported and their use may void your Porygon's limited warranty.",
+      "Some minor glitches are to be expected when receiving a brand new Porygon fresh off the assembly line. Please note, however, that unofficial upgrade modules are not supported and their use may void your Porygon's limited warranty.",
+    open: false,
+  },
+  {
+    question: "Is this a front for Team Rocket?",
+    answer:
+      "While we cannot disclose details of our parent companies, we can assure you that the Rocket Game Corner is a lawful, legitimate business. Any similarities to other organizations with 'Rocket' in the name are purely coincidental.",
     open: false,
   },
 ];
