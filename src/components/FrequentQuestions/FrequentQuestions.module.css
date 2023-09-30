@@ -8,16 +8,40 @@
 
 .Question {
   background-color: var(--bg-light-1);
-  color: var(--text-dark);
   padding: 8px 5px;
   border-radius: 10px;
-}
-
-.open {
+  color: var(--text-dark);
 }
 
 .questionText {
+  position: relative;
+  padding-right: 80px;
+  transition: all 0.4s ease;
+}
+
+.questionText::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
+}
+
+.open .questionText::after {
+  content: "-";
 }
 
 .answerText {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.open .answerText {
+  max-height: 1000px;
+  opacity: 1;
 }
