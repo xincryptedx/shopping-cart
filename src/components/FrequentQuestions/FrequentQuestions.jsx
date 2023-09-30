@@ -14,6 +14,7 @@ const FrequentQuestions = () => {
             questionText={entry.question}
             answerText={entry.answer}
             open={entry.open}
+            questions={questions}
             setQuestions={setQuestions}
             key={index}
           />
