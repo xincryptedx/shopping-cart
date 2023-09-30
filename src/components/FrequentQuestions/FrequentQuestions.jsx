@@ -1,31 +1,24 @@
+import { useState } from "react";
 import styles from "./FrequentQuestions.module.css";
+import questionData from "./questions";
+import Question from "./Question";
 
 const FrequentQuestions = () => {
+  const [questions, setQuestions] = useState(questionData);
+
   return (
     <div className={styles.FAQ}>
-      <ul>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-        <li>
-          <p>Question: Answer</p>
-        </li>
-      </ul>
+      {questions.map((entry, index) => {
+        return (
+          <Question
+            questionText={entry.question}
+            answerText={entry.answer}
+            open={entry.open}
+            setQuestions={setQuestions}
+            key={index}
+          />
+        );
+      })}
     </div>
   );
 };
