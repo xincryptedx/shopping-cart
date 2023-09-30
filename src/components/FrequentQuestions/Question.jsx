@@ -8,7 +8,10 @@ const Question = ({ question, index, toggleQuestion }) => {
   // If this one is selected then render as "open"
 
   return (
-    <div className={styles.Question} onClick={() => toggleQuestion(index)}>
+    <div
+      className={styles.Question + (question.open ? " " + styles.open : "")}
+      onClick={() => toggleQuestion(index)}
+    >
       <p className={styles.questionText}>{question.question}</p>
       <p className={styles.answerText}>{question.answer}</p>
     </div>
