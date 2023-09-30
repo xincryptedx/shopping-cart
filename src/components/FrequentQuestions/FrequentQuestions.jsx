@@ -16,6 +16,7 @@ const FrequentQuestions = () => {
             open={entry.open}
             questions={questions}
             setQuestions={setQuestions}
+            index={index}
             key={index}
           />
         );
